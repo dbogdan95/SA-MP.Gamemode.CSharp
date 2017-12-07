@@ -13,6 +13,7 @@ using Game.World.Item;
 using Game.World.PaynSpray;
 using Game.World.Property;
 using Game.Controllers;
+using Game.Core;
 
 namespace Game
 {
@@ -39,6 +40,7 @@ namespace Game
             SampSharp.Streamer.Streamer.DestroyAllItems(StreamType.All, true);
 
             base.OnInitialized(e);
+            Database.Connect();
 
             SetGameModeText("cioak");
             EnableStuntBonusForAll(false);
