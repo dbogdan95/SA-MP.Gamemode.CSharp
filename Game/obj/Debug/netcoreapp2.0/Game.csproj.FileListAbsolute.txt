@@ -1,0 +1,10 @@
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.csprojResolveAssemblyReference.cache
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.csproj.CoreCompileInputs.cache
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.AssemblyInfoInputs.cache
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.AssemblyInfo.cs
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.deps.json
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.runtimeconfig.json
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.runtimeconfig.dev.json
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.dll
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\SampSharp.Streamer.dll
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\SampSharp.Streamer.pdb

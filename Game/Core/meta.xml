@@ -1,0 +1,32 @@
+<meta>
+	<info name="Database Resource" description="Managing the database" author= "Miguel Santos (miguelantoniosantos.com)" version="1.0" type="script" async="true" />
+
+	<assembly ref="System.Data.dll" />
+	<assembly ref="MySql.Data.dll" />
+	<assembly ref="System.Xml.dll" />
+
+	<script src="database.cs" type="server" lang="csharp" />
+
+	<settings>
+		<setting name="database_server" value="89.33.242.88" default="89.33.242.88"/>
+		<setting name="database_port" value="3306" default="3306" />
+		<setting name="database_user" value="gta5life" default="gta5life"/>
+		<setting name="database_password" value="D1h9AoYaudknUGka" default="D1h9AoYaudknUGka"/>
+		<setting name="database_using_ssl" value="false" default="false" />
+		<setting name="database_ssl_pfx_file" value="" default="" />
+		<setting name="database_ssl_pfx_password" value="" default="" />
+		<setting name="database_database" value="gta5life" default="gta5life" />
+		<setting name="database_min_pool_size" value="1" default="1" />
+		<setting name="database_max_pool_size" value="20" default="20" />
+	</settings>
+
+	<export class="Database" function="executeQueryWithResult" />
+	<export class="Database" function="executePreparedQueryWithResult" />
+	<export class="Database" function="executeQuery" />
+	<export class="Database" function="executePreparedQuery" />
+	<export class="Database" function="createDataTable" />
+	<export class="Database" function="updateDataTable" />
+	<export class="Database" function="closeDataTable" />
+	<export class="Database" function="EscapeString" />
+
+</meta>
