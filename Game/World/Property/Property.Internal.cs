@@ -19,8 +19,9 @@ namespace Game.World.Property
         private float __angle;
         private bool __locked;
         private List<Player> __PlayersIn = new List<Player>();
+        private int __deposit;
 
-        private void __togglePlayerToProp(Player player, bool In)
+        private void __togglePlayer(Player player, bool In)
         {
             if (player.Lift || player.State != SampSharp.GameMode.Definitions.PlayerState.OnFoot)
                 return;

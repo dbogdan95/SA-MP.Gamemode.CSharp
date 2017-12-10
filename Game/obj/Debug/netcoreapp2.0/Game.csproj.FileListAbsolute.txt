@@ -8,3 +8,6 @@ F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.runtimeconfig.dev.js
 F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.dll
 F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\SampSharp.Streamer.dll
 F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\SampSharp.Streamer.pdb
+F:\SAMP dev\Game DLL\game\Game\bin\Debug\netcoreapp2.0\Game.pdb
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.dll
+F:\SAMP dev\Game DLL\game\Game\obj\Debug\netcoreapp2.0\Game.pdb

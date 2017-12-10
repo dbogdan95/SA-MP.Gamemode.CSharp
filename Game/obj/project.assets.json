@@ -2317,7 +2317,7 @@
       },
       "SampSharp.Streamer/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v2.0",
+        "framework": ".NETStandard,Version=v2.0",
         "dependencies": {
           "SampSharp.Core": "0.8.0-alpha3",
           "SampSharp.GameMode": "0.8.0-alpha2"
@@ -7222,8 +7222,8 @@
     },
     "SampSharp.Streamer/1.0.0": {
       "type": "project",
-      "path": "../../SampSharp-streamer/SampSharp.Streamer/SampSharp.Streamer.csproj",
-      "msbuildProject": "../../SampSharp-streamer/SampSharp.Streamer/SampSharp.Streamer.csproj"
+      "path": "../../SampSharp.Streamer/SampSharp.Streamer.csproj",
+      "msbuildProject": "../../SampSharp.Streamer/SampSharp.Streamer.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7269,8 +7269,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "F:\\SAMP dev\\Game DLL\\SampSharp-streamer\\SampSharp.Streamer\\SampSharp.Streamer.csproj": {
-              "projectPath": "F:\\SAMP dev\\Game DLL\\SampSharp-streamer\\SampSharp.Streamer\\SampSharp.Streamer.csproj"
+            "F:\\SAMP dev\\Game DLL\\SampSharp.Streamer\\SampSharp.Streamer.csproj": {
+              "projectPath": "F:\\SAMP dev\\Game DLL\\SampSharp.Streamer\\SampSharp.Streamer.csproj"
             }
           }
         }

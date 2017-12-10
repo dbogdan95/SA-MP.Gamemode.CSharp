@@ -38,7 +38,7 @@ namespace Game
                     Vector3 p1 = vehicle.PostionFromOffset(new Vector3(4.0254f, 4.8493f, -1.6276f));
                     Vector3 p2 = vehicle.PostionFromOffset(new Vector3(-3.9617f, 5.0254f, -1.5630f));
 
-                    IEnumerable<DynamicArea> list = DynamicArea.GetAreasForLine(p1, p2, 6);
+                    IEnumerable<DynamicArea> list = DynamicArea.GetAreasForLine(p1, p2);
 
                     foreach (DynamicArea dynamicArea in list)
                     {

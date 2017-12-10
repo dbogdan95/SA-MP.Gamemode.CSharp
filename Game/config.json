@@ -1,0 +1,12 @@
+﻿{
+  "database_server": "localhost",
+  "database_port": "3306",
+  "database_user": "root",
+  "database_password": "",
+  "database_using_ssl": "false",
+  "database_ssl_pfx_file": "",
+  "database_ssl_pfx_password": "",
+  "database_database": "game",
+  "database_min_pool_size": "1",
+  "database_max_pool_size": "20"
+}

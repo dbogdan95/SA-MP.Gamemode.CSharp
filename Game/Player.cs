@@ -13,6 +13,8 @@ namespace Game
         public Timer ItemInteractTimer { get; set; }
         public Property Property { get; set; }
         public Property PropertyInteracting { get; set; }
+        public House RentedRoom { get; set; }
+        public House House { get; set; }
 
         public Property RemoveFromProperty()
         {

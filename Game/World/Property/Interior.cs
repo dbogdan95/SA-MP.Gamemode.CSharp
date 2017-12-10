@@ -8,9 +8,6 @@ namespace Game.World
 {
     public class Interior : Pool<Interior>
     {
-        public event EventHandler<PlayerEventArgs> LeaveDoor;
-        public event EventHandler<PlayerEventArgs> TouchDoor;
-
         private int             __gameInterior;
         private string          __name;
         private Vector3         __pos;
@@ -31,28 +28,55 @@ namespace Game.World
             __area.Leave += __area_Leave;
         }
 
-        private void __area_Leave(object sender, SampSharp.GameMode.Events.PlayerEventArgs e)
+        private void __area_Leave(object sender, PlayerEventArgs e)
         {
             LeaveDoor?.Invoke(this, e);
         }
-
-        private void __area_Enter(object sender, SampSharp.GameMode.Events.PlayerEventArgs e)
+        private void __area_Enter(object sender, PlayerEventArgs e)
         {
             TouchDoor?.Invoke(this, e);
         }
 
         // Summary:
+        //     Called when a player leave the area around the interior's door.
+        public event EventHandler<PlayerEventArgs> LeaveDoor;
+        // Summary:
+        //     Called when a player enter the area around the interior's door.
+        public event EventHandler<PlayerEventArgs> TouchDoor;
+        // Summary:
         //     Gets the position of door.
         public Vector3 Position => __pos;
-        //
         // Summary:
         //     Gets the rotation.
         public float Angle => __a;
-        //
         // Summary:
         //     Gets the game interior.
         public int GameInterior => __gameInterior;
+        // Summary:
+        //     Gets the name of interior.
+        public override string ToString()
+        {
+            return "(" + GetAll<Interior>().IndexOf(this) + ")" + __name;
+        }
+        // Summary:
+        //     Check if given id is valid for the interiors pool.
+        public static bool ValidPoolID(int id)
+        {
+            return (id < GetAll<Interior>().Count && id > -1);
+        }
+        public static int Index(Interior interior)
+        {
+            if (interior == null)
+                return -1;
 
-        public override string ToString() => __name;
+            return GetAll<Interior>().IndexOf(interior);
+        }
+        public static Interior FromIndex(int idx)
+        {
+            if (!ValidPoolID(idx))
+                return null;
+
+            return GetAll<Interior>()[idx];
+        }
     }
 }

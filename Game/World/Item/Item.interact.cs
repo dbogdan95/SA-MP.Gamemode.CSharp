@@ -12,6 +12,7 @@ namespace Game.World.Item
             if (player.HoldingItem is null)
                 return false;
 
+            // TODO
             //player.Lift = true;
 
             //if(__type.UseCarryAnim)
@@ -48,6 +49,8 @@ namespace Game.World.Item
 
             System.Console.WriteLine("__PickupItem");
 
+
+            // TODO
             //player.ClearAnimations(true);
             //player.Position = player.Position;
             //player.Angle = (float)Util.GetAngleToPoint(player.Position, Position);

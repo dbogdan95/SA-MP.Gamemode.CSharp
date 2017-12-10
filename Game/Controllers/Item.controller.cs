@@ -24,7 +24,8 @@ namespace Game.World.Item
                 player.HoldingItem.RemoveItem(player);
             }
 
-            player.ItemInteractTimer.Dispose();
+            if(player.ItemInteractTimer != null)
+                player.ItemInteractTimer.Dispose();
         }
 
         private void Item_OnPlayerKeyStateChange(object sender, KeyStateChangedEventArgs e)

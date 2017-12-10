@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SampSharp-streamer\SampSharp.Streamer\SampSharp.Streamer.csproj" />
+    <ProjectReference Include="..\..\SampSharp.Streamer\SampSharp.Streamer.csproj" />
   </ItemGroup>
 
   <ItemGroup>
