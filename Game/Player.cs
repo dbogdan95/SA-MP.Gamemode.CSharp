@@ -1,13 +1,19 @@
 ﻿using System.Timers;
 using Game.World.Item;
 using Game.World.Property;
+using Game.World.Property.Business;
+using Game.World.Property.House;
 using SampSharp.GameMode.World;
 using SampSharp.GameMode.Controllers;
+using System;
+using SampSharp.GameMode;
 
 namespace Game
 {
     public class Player : BasePlayer
     {
+        public bool IsLogged { get; set; }
+        public Account.Account MyAccount { get; set; }
         public Item HoldingItem { get; set; }
         public bool Lift { get; set; }
         public Timer ItemInteractTimer { get; set; }
@@ -15,6 +21,26 @@ namespace Game
         public Property PropertyInteracting { get; set; }
         public House RentedRoom { get; set; }
         public House House { get; set; }
+
+        public override void Spawn()
+        {
+            SetSpawnInfo(-1, 0, new Vector3(), 0.0f);
+            base.Spawn();
+        }
+
+        public bool PutInProperty(Property property)
+        {
+            if (property == null)
+                return false;
+
+            if(property.Interior == null)
+            {
+                Position = property.Position;
+                return true;
+            }
+
+            return property.PutPlayerIn(this);
+        }
 
         public Property RemoveFromProperty()
         {

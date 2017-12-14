@@ -1,34 +1,50 @@
 ﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Definitions;
-using SampSharp.GameMode.Pools;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.World;
 using SampSharp.Streamer.World;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
+using SampSharp.GameMode.Pools;
+using MySql.Data.MySqlClient;
+using Game.Core;
 
 namespace Game.World.Property
 {
     public abstract partial class Property : Pool<Property>
     {
+        private PropertyType __type;
+        private DynamicArea __area = null;
+        private DynamicPickup __pickup = null;
+        private DynamicMapIcon __icon = null;
+        private DynamicTextLabel __label = null;
+        private Interior __interior = null;
+        private Vector3 __pos;
+        private float __angle;
+        private bool __locked;
+        private List<Player> __PlayersIn = new List<Player>();
+        private int __deposit;
+        private int __price;
+        private int __owner;
+        private string __ownerName;
+
         public Property(PropertyType type, Interior interior, Vector3 pos, float angle)
         {
-            // Nu poate fi None, nu?
+            // Nu poate fii None, nu?
             if (type == PropertyType.TypeNone)
                 type = PropertyType.TypeGeneric;
-
-            // Iconite doar pentru business-uri
-            if (type == PropertyType.TypeBusiness)
-                __icon = new DynamicMapIcon(pos, 0);
 
             // Buildup
             __type = type;
             __area = DynamicArea.CreateSphere(pos, 1.5f);
             __pickup = new DynamicPickup((int)type, 23, pos);
             __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
+            __label.TestLOS = true;
             __pos = pos;
             __angle = angle;
+            __price = 0;
             Interior = interior;
 
             // Inregistram evenimentele
@@ -41,22 +57,22 @@ namespace Game.World.Property
         public virtual void Remove()
         {
             // Curatam memoria
-            //__pickup.Dispose();
-            //__label.Dispose();
-            __area.Dispose();
+            __pickup.Dispose();
+            __label.Dispose();
+            //__area.Dispose();
 
-            // Doar business-urile au iconite
-            if (__type == PropertyType.TypeBusiness)
+            if (__icon != null)
                 __icon.Dispose();
 
             foreach (Player player in __PlayersIn)
                 player.RemoveFromProperty();
 
-            foreach (Player player in Player.GetAll<Player>())
-            {
-                if (player.PropertyInteracting == this)
-                    player.PropertyInteracting = null;
-            }
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.PropertyInteracting == this))
+               player.PropertyInteracting = null;
+
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this))
+                player.RentedRoom = null;
+
             base.Dispose(true);
         }
 
@@ -106,6 +122,26 @@ namespace Game.World.Property
         // Summary:
         //     Gets the label of property.
         public virtual DynamicTextLabel Label => __label;
+
+        public virtual bool ShowIcon(int id)
+        {
+            if(id < 0 || id > 63)
+            {
+                return false;
+            }
+
+            if (__icon != null)
+                __icon.Type = id;
+            else
+                __icon = new DynamicMapIcon(__pos, id);
+
+            return true;
+        }
+        public virtual void HideIcon()
+        {
+            if (__icon != null)
+                __icon.Dispose();
+        }
 
         //
         //
@@ -222,7 +258,29 @@ namespace Game.World.Property
         // Summary:
         //     Gets the money from the deposit of property.
         public virtual int Deposit { get => __deposit; set => __deposit = value; }
+        public virtual int Price { get => __price; set => __price = value; }
+
+        public virtual int Owner { get => __owner; set => __owner = value; }
+
+        //public virtual string GetOwnerName()
+        //{
+        //    using (var conn = Database.Connect())
+        //    {
+
+        //    }
+        //}
+
         public abstract void UpdateSql();
         public abstract void UpdateLabel();
+        public abstract int GetSqlID();
+        public abstract void SetOwnerUpdate(int id);
+
+        public static Property GetPropertyBySQLID(int id)
+        {
+            if (id <= 0)
+                return null;
+
+            return GetAll<Property>().Where(p => p.GetSqlID() == id).FirstOrDefault();
+        }
     }
 }

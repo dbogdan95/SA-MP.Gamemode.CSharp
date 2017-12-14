@@ -8,7 +8,7 @@ using System.Timers;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.Definitions;
 
-namespace Game
+namespace Game.World
 {
     class Clock
     {

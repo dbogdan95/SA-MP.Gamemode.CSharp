@@ -56,7 +56,7 @@ namespace Game.World
         //     Gets the name of interior.
         public override string ToString()
         {
-            return "(" + GetAll<Interior>().IndexOf(this) + ")" + __name;
+            return __name + "(" + GetAll<Interior>().IndexOf(this) + ")";
         }
         // Summary:
         //     Check if given id is valid for the interiors pool.

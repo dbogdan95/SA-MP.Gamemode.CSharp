@@ -1,5 +1,7 @@
 ﻿using Game.World;
 using Game.World.Property;
+using Game.World.Property.Business;
+using Game.World.Property.House;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.Display;
 using SampSharp.GameMode.SAMP.Commands;
@@ -27,6 +29,14 @@ namespace Game.Cmds
                 d.AddItem("Level: " + h.Level);
                 d.AddItem("Rent: " + Util.FormatNumber(h.Rent));
             }
+            else if (property is Business)
+            {
+                Business b = property as Business;
+                d.AddItem("Type: " + ((b.BizzType != null) ? b.BizzType.ToString() : "None"));
+                d.AddItem("Linked to: " + b.Domainid);
+            }
+
+            d.AddItem("Owner: " + Account.Account.GetSQLNameFromSQLID(property.Owner));
 
             d.Show(player);
             d.Response += (sender1, args1) =>
@@ -38,10 +48,7 @@ namespace Game.Cmds
                         case 0:
                             {
                                 ListDialog di = new ListDialog("Edit property - Interior", "Select", "Back");
-
-                                // From Pawn
-                                //format(str, 255, "- Level: %d\n- Interior: %d\n- World: %d\n- Price: %s\n- Rent & Fee: %s\n- Locked: %d\n- Label: %s\n- Owner: %s\n- Bizz Type: %s\n- Area: %d\n- Faction: %s\n- Gates: %d",
-
+                                
                                 foreach(Interior interior in Interior.GetAll<Interior>())
                                 {
                                     di.AddItem(interior.ToString());
@@ -51,7 +58,7 @@ namespace Game.Cmds
                                 {
                                     if (args2.DialogButton == DialogButton.Left)
                                     {
-                                        property.Interior = Interior.GetAll<Interior>()[args2.ListItem];
+                                        property.Interior = Interior.FromIndex(args2.ListItem);
                                         property.UpdateSql();
 
                                         d.Items[0] = "Interior: " + property.Interior.ToString();
@@ -96,6 +103,29 @@ namespace Game.Cmds
                                         d.Show(player);
                                     };
                                 }
+                                else if(property is Business)
+                                {
+                                    ListDialog di = new ListDialog("Edit property - Business type", "Select", "Back");
+
+                                    foreach (BusinessType type in BusinessType.GetAll<BusinessType>())
+                                    {
+                                        di.AddItem(type.ToString());
+                                    }
+
+                                    di.Show(player);
+                                    di.Response += (sender2, args2) =>
+                                    {
+                                        if (args2.DialogButton == DialogButton.Left)
+                                        {
+                                            Business b = property as Business;
+                                            b.BizzType = BusinessType.Find(args2.ListItem+1);
+                                            b.UpdateSql();
+
+                                            d.Items[3] = "Type: " + b.BizzType.ToString();
+                                        }
+                                        d.Show(player);
+                                    };
+                                }
                                 break;
                             }
                         case 4:
@@ -107,7 +137,7 @@ namespace Game.Cmds
                                     di.Show(player);
                                     di.Response += (sender2, args2) =>
                                     {
-                                        if(args2.DialogButton == DialogButton.Left)
+                                        if (args2.DialogButton == DialogButton.Left)
                                         {
                                             if (int.TryParse(args2.InputText, out int n))
                                             {
@@ -121,6 +151,51 @@ namespace Game.Cmds
                                         d.Show(player);
                                     };
                                 }
+                                else if (property is Business)
+                                {
+                                    InputDialog di = new InputDialog("Edit property - Link to", "Type the id of domain you want to link to this business.", false, "Set", "Back");
+
+                                    di.Show(player);
+                                    di.Response += (sender2, args2) =>
+                                    {
+                                        if (args2.DialogButton == DialogButton.Left)
+                                        {
+                                            if (int.TryParse(args2.InputText, out int n))
+                                            {
+                                                Business b = property as Business;
+                                                b.Domainid = n;
+                                                b.UpdateSql();
+
+                                                d.Items[4] = "Linked to: " + b.Domainid;
+                                            }
+                                        }
+                                        d.Show(player);
+                                    };
+                                }
+                                break;
+                            }
+                        case 5:
+                            {
+                                InputDialog di = new InputDialog("Edit property - Owner", "Change the owner of property.", false, "Change", "Back");
+
+                                di.Show(player);
+                                di.Response += (sender2, args2) =>
+                                {
+                                    if (args2.DialogButton == DialogButton.Left)
+                                    {
+                                        if (int.TryParse(args2.InputText, out int n))
+                                        {
+                                            if (!Account.Account.IsSQLIDValid(n))
+                                                n = 0;
+                                            
+                                            property.SetOwnerUpdate(n);
+                                            property.UpdateLabel();
+
+                                            d.Items[5] = "Owner: " + Account.Account.GetSQLNameFromSQLID(n);
+                                        }
+                                    }
+                                    d.Show(player);
+                                };
                                 break;
                             }
                     }

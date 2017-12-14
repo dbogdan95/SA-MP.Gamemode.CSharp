@@ -7,13 +7,12 @@ using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.Display;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.World;
-
-using Game.World;
-using Game.World.PaynSpray.Definitions;
+using System.Collections.Generic;
+using Game.World.Property.Business;
 
 namespace Game.World.PaynSpray
 {
-    class PaynSpray : Pool<PaynSpray>
+    public partial class PaynSpray : IdentifiedPool<PaynSpray>
     {
         public int Model { get; set; }
         public PaynSprayState State { get; set; }
@@ -24,12 +23,14 @@ namespace Game.World.PaynSpray
         public Vector3 AreaMins { get; set; }
         public Vector3 AreaMaxs { get; set; }
         public Vector3 Camera { get; set; }
-
         private DynamicArea __zone;
         private DynamicObject __door;
 
-        public PaynSpray(int model, Vector3 openPosition, Vector3 openRotation, Vector3 closePosition, Vector3 closeRotation, Vector3 areaMins, Vector3 areaMaxs, Vector3 camera)
+        public event EventHandler<PaynSprayEventArgs> Repaired;
+
+        public PaynSpray(int id, int model, Vector3 openPosition, Vector3 openRotation, Vector3 closePosition, Vector3 closeRotation, Vector3 areaMins, Vector3 areaMaxs, Vector3 camera)
         {
+            Id = id;
             Model = model;
             OpenPosition = openPosition;
             OpenRotation = openRotation;
@@ -47,6 +48,11 @@ namespace Game.World.PaynSpray
             __zone.Leave += __zone_Leave;
 
             State = PaynSprayState.StateClosed;
+        }
+
+        public override string ToString()
+        {
+            return "Pay'n'Spray(" + Id + ")";
         }
 
         public int Close()
@@ -125,6 +131,7 @@ namespace Game.World.PaynSpray
                             else
                             {
                                 player.GiveMoney(-totalCost);
+                                Repaired?.Invoke(this, new PaynSprayEventArgs(player, totalCost));
 
                                 new Timer(300, true).Tick += (snd3, args3) =>
                                 {
@@ -139,6 +146,13 @@ namespace Game.World.PaynSpray
                                     Util.PlaySoundInRangeOfPoint(Sounds.SOUND_BUY_CAR_MOD, player.Position, 25.0f);
                                     countReparations--;
                                 };
+
+                                Business b = Business.GetBusinessByDomainID(Id);
+                                if (b != null)
+                                {
+                                    b.Deposit += totalCost;
+                                    b.UpdateSql();
+                                }
                             }
                         }
                         else
@@ -159,7 +173,7 @@ namespace Game.World.PaynSpray
         private void __player_Disconnected(object sender, DisconnectEventArgs e)
         {
             Player player = sender as Player;
-            if (player.Vehicle != null) player.Vehicle?.Respawn();
+            player.Vehicle?.Respawn();
         }
 
         private void __zone_Leave(object sender, PlayerEventArgs e)

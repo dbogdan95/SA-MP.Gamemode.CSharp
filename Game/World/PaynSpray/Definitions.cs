@@ -1,4 +1,4 @@
-﻿namespace Game.World.PaynSpray.Definitions
+﻿namespace Game.World
 {
     public enum PaynSprayState
     {
