@@ -13,7 +13,7 @@ using Game.Core;
 
 namespace Game.World.Property
 {
-    public abstract partial class Property : Pool<Property>
+    public abstract partial class Property : IdentifiedPool<Property>
     {
         private PropertyType __type;
         private DynamicArea __area = null;
@@ -28,29 +28,38 @@ namespace Game.World.Property
         private int __deposit;
         private int __price;
         private int __owner;
-        private string __ownerName;
+
+        public Property(int id, PropertyType type, Interior interior, Vector3 pos, float angle)
+        {
+            __Spawn(type, interior, pos, angle);
+            Id = id;
+        }
 
         public Property(PropertyType type, Interior interior, Vector3 pos, float angle)
         {
-            // Nu poate fii None, nu?
-            if (type == PropertyType.TypeNone)
-                type = PropertyType.TypeGeneric;
+            __Spawn(type, interior, pos, angle);
 
-            // Buildup
-            __type = type;
-            __area = DynamicArea.CreateSphere(pos, 1.5f);
-            __pickup = new DynamicPickup((int)type, 23, pos);
-            __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
-            __label.TestLOS = true;
-            __pos = pos;
-            __angle = angle;
-            __price = 0;
-            Interior = interior;
+            using (var conn = Database.Connect())
+            {
+                MySqlCommand cmd = new MySqlCommand("INSERT INTO properties (interior, x, y, z, a, locked) VALUES (@interior, @x, @y, @z, @a, @locked)", conn);
 
-            // Inregistram evenimentele
-            __area.Enter += __area_Enter;
-            __area.Leave += __area_Leave;
+                int inter = Interior.GetAll<Interior>().IndexOf(interior);
+                if (inter == -1)
+                    cmd.Parameters.AddWithValue("@interior", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@interior", inter);
+
+                cmd.Parameters.AddWithValue("@x", pos.X);
+                cmd.Parameters.AddWithValue("@y", pos.Y);
+                cmd.Parameters.AddWithValue("@z", pos.Z);
+                cmd.Parameters.AddWithValue("@a", angle);
+                cmd.Parameters.AddWithValue("@locked", Locked);
+                cmd.ExecuteNonQuery();
+
+                Id = (int)cmd.LastInsertedId;
+            }
         }
+
         //
         // Summary:
         //     Dispose a property.
@@ -72,6 +81,12 @@ namespace Game.World.Property
 
             foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this))
                 player.RentedRoom = null;
+
+            using (var conn = Database.Connect())
+            {
+                new MySqlCommand("DELETE FROM properties WHERE id="+Id, conn)
+                    .ExecuteNonQuery();
+            }
 
             base.Dispose(true);
         }
@@ -262,25 +277,51 @@ namespace Game.World.Property
 
         public virtual int Owner { get => __owner; set => __owner = value; }
 
-        //public virtual string GetOwnerName()
-        //{
-        //    using (var conn = Database.Connect())
-        //    {
+        public virtual void UpdateSql()
+        {
+            using (var conn = Database.Connect())
+            {
+                MySqlCommand cmd = new MySqlCommand("UPDATE properties SET interior=@interior, locked=@locked, deposit=@deposit, price=@price WHERE id=@id", conn);
 
-        //    }
-        //}
+                int inter = Interior.Index(Interior);
+                if(inter == -1)
+                    cmd.Parameters.AddWithValue("@interior", DBNull.Value);
+                else
+                    cmd.Parameters.AddWithValue("@interior", inter);
 
-        public abstract void UpdateSql();
+                cmd.Parameters.AddWithValue("@locked", Locked);
+                cmd.Parameters.AddWithValue("@deposit", Deposit);
+                cmd.Parameters.AddWithValue("@price", Price);
+                cmd.Parameters.AddWithValue("@id", Id);
+                cmd.ExecuteNonQuery();
+            }
+        }
+
         public abstract void UpdateLabel();
-        public abstract int GetSqlID();
+        //public abstract int Id { get; }
+
         public abstract void SetOwnerUpdate(int id);
 
-        public static Property GetPropertyBySQLID(int id)
+        private void __Spawn(PropertyType type, Interior interior, Vector3 pos, float angle)
         {
-            if (id <= 0)
-                return null;
+            // Nu poate fii None, nu?
+            if (type == PropertyType.TypeNone)
+                type = PropertyType.TypeGeneric;
 
-            return GetAll<Property>().Where(p => p.GetSqlID() == id).FirstOrDefault();
+            // Buildup
+            __type = type;
+            __area = DynamicArea.CreateSphere(pos, 1.5f);
+            __pickup = new DynamicPickup((int)type, 23, pos);
+            __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
+            __label.TestLOS = true;
+            __pos = pos;
+            __angle = angle;
+            __price = 0;
+            Interior = interior;
+
+            // Inregistram evenimentele
+            __area.Enter += __area_Enter;
+            __area.Leave += __area_Leave;
         }
     }
 }

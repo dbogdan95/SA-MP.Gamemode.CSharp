@@ -1,6 +1,8 @@
 ﻿using SampSharp.GameMode.SAMP.Commands;
 using SampSharp.GameMode.World;
 using Game.World.Property.House;
+using Game.World.Property;
+using Game.World.Property.Business;
 
 namespace Game.Cmds
 {
@@ -44,7 +46,6 @@ namespace Game.Cmds
             }
 
             player.GameText("welcome home", 3000, 1);
-            player.PlaySound(1068);
 
             player.RentedRoom = house;
             player.Money -= house.Rent;
@@ -57,6 +58,49 @@ namespace Game.Cmds
         [Command("buy")]
         private static void CMD_Buy(BasePlayer sender)
         {
+            Player player = (sender as Player);
+            Property property = player.PropertyInteracting;
+
+            if (!(property is Property))
+            {
+                player.SendClientMessage("[ERROR] There is no property around you.");
+                return;
+            }
+
+            if (property.Price == 0)
+                return;
+
+            // TODO: add money to to owner bank account
+
+            if (property is Business)
+            {
+                if(player.Business != null)
+                {
+                    player.SendClientMessage("[ERROR] You already have a business.");
+                    return;
+                }
+
+                player.GameText("time for business", 3000, 1);
+            }
+            else if (property is House)
+            {
+                if (player.House != null)
+                {
+                    player.SendClientMessage("[ERROR] You already have a house.");
+                    return;
+                }
+
+                (property as House).Rent = 0;
+                player.GameText("home sweet home", 3000, 1);
+            }
+
+            player.Money -= property.Price;
+
+            property.Price = 0;
+            property.SetOwnerUpdate(player.MyAccount.Id);
+            property.PutPlayerIn(player);
+            property.UpdateLabel();
+            property.UpdateSql();
         }
     }
 }

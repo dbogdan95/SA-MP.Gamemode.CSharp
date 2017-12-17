@@ -21,6 +21,9 @@ namespace Game
         public Property PropertyInteracting { get; set; }
         public House RentedRoom { get; set; }
         public House House { get; set; }
+        public Business Business { get; set; }
+        public bool PropertyTranslation { get; set; }
+        public bool PropertyDirection { get; set; }
 
         public override void Spawn()
         {

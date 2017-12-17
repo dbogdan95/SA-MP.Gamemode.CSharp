@@ -12,7 +12,9 @@ namespace Game.Account
     {
         void Register()
         {
-            InputDialog input = new InputDialog("Register", "Welcome " + __player.Name + "!\nPlease choose a password of your account.", true, "next", "leave");
+            InputDialog input = new InputDialog("Register", "Welcome " + __player.Name + 
+                "!\nPlease choose a password of your account.", true, "next", "leave");
+
             input.Response += Register_Response;
             input.Show(__player);
         }
@@ -35,8 +37,8 @@ namespace Game.Account
             {
                 PasswordHash = Util.Sha256_hash(e.InputText);
                 
-                input = new InputDialog("Register", "Please enter your email address.\nWe will use it to help you to recover your password at need.", 
-                    false, "next", "leave");
+                input = new InputDialog("Register", "Please enter your email address.\n" +
+                    "We will use it to help you to recover your password at need.",  false, "next", "leave");
 
                 input.Response += Email_Response;
             }
@@ -61,8 +63,11 @@ namespace Game.Account
             {
                 Email = e.InputText;
 
-                input = new InputDialog("Register", "Please type your birthday.\nWe will use it to celebrate your birthday together.\n{D10859}FORMAT: dd/mm/yyyy (zz/LL/aaaa)", 
+                input = new InputDialog("Register", "Please type your birthday.\n" +
+                    "We will use it to celebrate your birthday together.\n" +
+                    "{D10859}FORMAT: dd/mm/yyyy (zz/LL/aaaa)", 
                     false, "finish", "leave");
+
                 input.Response += Birthday_Response;
             }
             input.Show(__player);
@@ -81,7 +86,9 @@ namespace Game.Account
             {
                 if (date.Year > DateTime.Now.Year)
                 {
-                    InputDialog input = new InputDialog("Register", "Hola from the future!\n{D10859}FORMAT: dd/mm/yyyy (zz/LL/aaaa)", false, "finish", "leave");
+                    InputDialog input = new InputDialog("Register", "Hola from the future!" +
+                        "\n{D10859}FORMAT: dd/mm/yyyy (zz/LL/aaaa)", false, "finish", "leave");
+
                     input.Response += Birthday_Response;
                     input.Show(__player);
                     return;
@@ -89,13 +96,16 @@ namespace Game.Account
 
                 Birthday = date;
 
-                MessageDialog msg = new MessageDialog("Register", "You are a?\nif you do not fit it.. sorry, we have only two buttons :(", "Male", "Female");
+                MessageDialog msg = new MessageDialog("Register", "You are a?", "Male", "Female");
+
                 msg.Response += Gender_Response;
                 msg.Show(__player);
             }
             else
             {
-                InputDialog input = new InputDialog("Register", "Invalid birthday date.\nIt must be in format:{D10859} dd/mm/yyyy (zz/LL/aaaa)", false, "finish", "leave");
+                InputDialog input = new InputDialog("Register", "Invalid birthday date.\n" +
+                    "It must be in format:{D10859} dd/mm/yyyy (zz/LL/aaaa)", false, "finish", "leave");
+
                 input.Response += Birthday_Response;
                 input.Show(__player);
             }

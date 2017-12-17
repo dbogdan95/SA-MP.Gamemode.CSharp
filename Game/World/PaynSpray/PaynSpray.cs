@@ -14,15 +14,15 @@ namespace Game.World.PaynSpray
 {
     public partial class PaynSpray : IdentifiedPool<PaynSpray>
     {
-        public int Model { get; set; }
-        public PaynSprayState State { get; set; }
-        public Vector3 OpenPosition { get; set; }
-        public Vector3 OpenRotation { get; set; }
-        public Vector3 ClosePosition { get; set; }
-        public Vector3 CloseRotation { get; set; }
-        public Vector3 AreaMins { get; set; }
-        public Vector3 AreaMaxs { get; set; }
-        public Vector3 Camera { get; set; }
+        public int Model { get; private set; }
+        public PaynSprayState State { get; private set; }
+        public Vector3 OpenPosition { get; private set; }
+        public Vector3 OpenRotation { get; private set; }
+        public Vector3 ClosePosition { get; private set; }
+        public Vector3 CloseRotation { get; private set; }
+        public Vector3 AreaMins { get; private set; }
+        public Vector3 AreaMaxs { get; private set; }
+        public Vector3 Camera { get; private set; }
         private DynamicArea __zone;
         private DynamicObject __door;
 
@@ -126,7 +126,8 @@ namespace Game.World.PaynSpray
 
                                 Open();
                                 player.ToggleControllable(true);
-                                player.GameText("~n~~w~We repair, you pay!~n~~w~We can't repair if you don't have money!", 4000, 3);
+                                player.GameText("~n~~w~We repair, you pay!~n~" +
+                                    "~w~We can't repair if you don't have money!", 4000, 3);
                             }
                             else
                             {
@@ -147,7 +148,7 @@ namespace Game.World.PaynSpray
                                     countReparations--;
                                 };
 
-                                Business b = Business.GetBusinessByDomainID(Id);
+                                Business b = Business.FindByDomain(Id);
                                 if (b != null)
                                 {
                                     b.Deposit += totalCost;

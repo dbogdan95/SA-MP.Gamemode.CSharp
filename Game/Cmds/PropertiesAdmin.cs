@@ -37,6 +37,7 @@ namespace Game.Cmds
             }
 
             d.AddItem("Owner: " + Account.Account.GetSQLNameFromSQLID(property.Owner));
+            d.AddItem("Sell price: " + Util.FormatNumber(property.Price));
 
             d.Show(player);
             d.Response += (sender1, args1) =>
@@ -48,8 +49,10 @@ namespace Game.Cmds
                         case 0:
                             {
                                 ListDialog di = new ListDialog("Edit property - Interior", "Select", "Back");
-                                
-                                foreach(Interior interior in Interior.GetAll<Interior>())
+
+                                di.AddItem("No interior");
+
+                                foreach (Interior interior in Interior.GetAll<Interior>())
                                 {
                                     di.AddItem(interior.ToString());
                                 }
@@ -58,7 +61,11 @@ namespace Game.Cmds
                                 {
                                     if (args2.DialogButton == DialogButton.Left)
                                     {
-                                        property.Interior = Interior.FromIndex(args2.ListItem);
+                                        if(args2.ListItem == 0)
+                                            property.Interior = null;
+                                        else
+                                            property.Interior = Interior.FromIndex(args2.ListItem - 1);
+
                                         property.UpdateSql();
 
                                         d.Items[0] = "Interior: " + property.Interior.ToString();
@@ -96,6 +103,7 @@ namespace Game.Cmds
                                                 House h = property as House;
                                                 h.Level = Math.Clamp(n, 1, 999);
                                                 h.UpdateSql();
+                                                h.UpdateLabel();
 
                                                 d.Items[3] = "Level: " + h.Level;
                                             }
@@ -120,6 +128,7 @@ namespace Game.Cmds
                                             Business b = property as Business;
                                             b.BizzType = BusinessType.Find(args2.ListItem+1);
                                             b.UpdateSql();
+                                            b.UpdateLabel();
 
                                             d.Items[3] = "Type: " + b.BizzType.ToString();
                                         }
@@ -144,6 +153,7 @@ namespace Game.Cmds
                                                 House h = property as House;
                                                 h.Rent = Math.Clamp(n, 0, 500);
                                                 h.UpdateSql();
+                                                h.UpdateLabel();
 
                                                 d.Items[4] = "Rent: " + Util.FormatNumber(h.Rent);
                                             }
@@ -176,7 +186,7 @@ namespace Game.Cmds
                             }
                         case 5:
                             {
-                                InputDialog di = new InputDialog("Edit property - Owner", "Change the owner of property.", false, "Change", "Back");
+                                InputDialog di = new InputDialog("Edit property - Owner", "Change the owner of property(0 to remove owner).", false, "Change", "Back");
 
                                 di.Show(player);
                                 di.Response += (sender2, args2) =>
@@ -192,6 +202,28 @@ namespace Game.Cmds
                                             property.UpdateLabel();
 
                                             d.Items[5] = "Owner: " + Account.Account.GetSQLNameFromSQLID(n);
+                                        }
+                                    }
+                                    d.Show(player);
+                                };
+                                break;
+                            }
+                        case 6:
+                            {
+                                InputDialog di = new InputDialog("Edit property - Sell price", "Change the sell price of property.", false, "Change", "Back");
+
+                                di.Show(player);
+                                di.Response += (sender2, args2) =>
+                                {
+                                    if (args2.DialogButton == DialogButton.Left)
+                                    {
+                                        if (int.TryParse(args2.InputText, out int n))
+                                        {
+                                            property.Price = n;
+                                            property.UpdateSql();
+                                            property.UpdateLabel();
+
+                                            d.Items[6] = "Sell price: " + Util.FormatNumber(property.Price);
                                         }
                                     }
                                     d.Show(player);

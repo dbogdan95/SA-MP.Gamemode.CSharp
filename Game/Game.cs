@@ -76,10 +76,8 @@ namespace Game
             new World.PaynSpray.PaynSpray(8, -1004, new Vector3(-100.0399, 1111.4144, 24.4802), new Vector3(0.0000, 90.0000, 90.0000), new Vector3(-100.0399, 1111.4144, 21.6406), new Vector3(0.0000, 0.0000, 90.0000), new Vector3(-104.4104, 1125.9390, 18.6544), new Vector3(-95.6366, 1112.2601, 24.2028), new Vector3(-100.8332, 1103.6481, 23.6690));
             new World.PaynSpray.PaynSpray(9, -1008, new Vector3(720.0145, -462.4834, 18.6588), new Vector3(0.0000, 90.0000, 90.0000), new Vector3(720.0145, -462.4834, 16.8594), new Vector3(0.0000, 0.0000, 90.0000), new Vector3(715.7748, -447.3318, 14.9643), new Vector3(724.2939, -461.0360, 20.4023), new Vector3(719.7719, -467.8614, 18.5736)).Open();
 
-            //House h = new House(Interior.GetAll<Interior>()[3], new Vector3(1023.1342, -1031.1912, 31.9978), 1.0f);
-            // Console.WriteLine(h.ToString());
-
-
+            //House h = new House(Interior.FromIndex(1), new Vector3(1023.1342, -1031.1912, 31.9978), 1.0f);
+            //string propertyJson = Newtonsoft.Json.JsonConvert.SerializeObject(this);
             base.OnInitialized(e);
         }
 
@@ -227,7 +225,7 @@ namespace Game
         [Command("dick7")]
         private static void Crime(BasePlayer sender)
         {
-            FadeScreen fs = new FadeScreen(sender as Player, 5000);
+            FadeScreen fs = new FadeScreen(sender as Player, 5000, FadeScreenMode.ModeComplete);
             fs.Start();
         }
     }

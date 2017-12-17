@@ -15,6 +15,7 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.9-dmr" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="SampSharp.Core" Version="0.8.0-alpha3" />
     <PackageReference Include="SampSharp.GameMode" Version="0.8.0-alpha2" />
   </ItemGroup>
