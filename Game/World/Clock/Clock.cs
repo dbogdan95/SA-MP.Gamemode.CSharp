@@ -1,12 +1,10 @@
 ﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Display;
-using SampSharp.GameMode.World;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Timers;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.Definitions;
+using Game.World.Players;
 
 namespace Game.World
 {

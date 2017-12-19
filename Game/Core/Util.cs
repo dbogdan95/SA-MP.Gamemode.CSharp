@@ -1,8 +1,7 @@
-﻿using Game.World;
+﻿using Game.World.Players;
 using SampSharp.GameMode;
 using SampSharp.GameMode.World;
 using System;
-using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 

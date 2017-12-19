@@ -2,11 +2,9 @@
 using SampSharp.GameMode.Events;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.Controllers;
-using SampSharp.Streamer.World;
-using System.Collections.Generic;
-using System;
+using Game.World.Players;
 
-namespace Game.World.Item
+namespace Game.World.Items
 {
     public partial class ItemController : IController, IEventListener
     {

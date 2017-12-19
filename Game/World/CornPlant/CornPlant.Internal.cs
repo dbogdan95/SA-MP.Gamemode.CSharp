@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Text;
 using SampSharp.GameMode;
 
-namespace Game
+namespace Game.World
 {
     public partial class CornPlant
     {

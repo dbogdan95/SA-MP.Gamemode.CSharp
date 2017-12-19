@@ -1,9 +1,6 @@
-﻿using Game.World.PaynSpray;
+﻿using Game.World.PaynSprays;
 using SampSharp.GameMode.SAMP.Commands;
 using SampSharp.GameMode.World;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Game.Cmds
 {

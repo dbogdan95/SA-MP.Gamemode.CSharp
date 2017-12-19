@@ -1,7 +1,6 @@
-﻿using Game.World;
-using Game.World.Property;
-using Game.World.Property.Business;
-using Game.World.Property.House;
+﻿using Game.Accounts;
+using Game.World.Players;
+using Game.World.Properties;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.Display;
 using SampSharp.GameMode.SAMP.Commands;
@@ -36,7 +35,7 @@ namespace Game.Cmds
                 d.AddItem("Linked to: " + b.Domainid);
             }
 
-            d.AddItem("Owner: " + Account.Account.GetSQLNameFromSQLID(property.Owner));
+            d.AddItem("Owner: " + Account.GetSQLNameFromSQLID(property.Owner));
             d.AddItem("Sell price: " + Util.FormatNumber(property.Price));
 
             d.Show(player);
@@ -195,13 +194,13 @@ namespace Game.Cmds
                                     {
                                         if (int.TryParse(args2.InputText, out int n))
                                         {
-                                            if (!Account.Account.IsSQLIDValid(n))
+                                            if (!Account.IsSQLIDValid(n))
                                                 n = 0;
                                             
                                             property.SetOwnerUpdate(n);
                                             property.UpdateLabel();
 
-                                            d.Items[5] = "Owner: " + Account.Account.GetSQLNameFromSQLID(n);
+                                            d.Items[5] = "Owner: " + Account.GetSQLNameFromSQLID(n);
                                         }
                                     }
                                     d.Show(player);

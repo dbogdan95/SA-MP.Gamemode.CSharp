@@ -1,4 +1,5 @@
-﻿using SampSharp.GameMode;
+﻿using Game.World.Players;
+using SampSharp.GameMode;
 using SampSharp.GameMode.Controllers;
 using SampSharp.GameMode.World;
 using System;

@@ -2,11 +2,13 @@
 using SampSharp.GameMode;
 using SampSharp.GameMode.Controllers;
 using SampSharp.GameMode.Events;
-using SampSharp.GameMode.World;
 using SampSharp.GameMode.Definitions;
 using SampSharp.Streamer.World;
 using System.Collections.Generic;
 using System.Xml;
+using Game.World;
+using Game.World.Players;
+using Game.World.Vehicles;
 
 namespace Game
 {

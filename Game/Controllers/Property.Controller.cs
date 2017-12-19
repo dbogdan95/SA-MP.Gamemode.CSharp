@@ -1,14 +1,9 @@
 ﻿using SampSharp.GameMode.Controllers;
 using System;
-using System.Xml;
 using SampSharp.GameMode;
-using Game.World;
 using Game.Core;
-using System.Data;
-using Game.World.Property;
-using Game.World.Property.Business;
-using Game.World.Property.House;
 using MySql.Data.MySqlClient;
+using Game.World.Properties;
 
 namespace Game.Controllers
 {
@@ -21,18 +16,18 @@ namespace Game.Controllers
 
         private void Property_OnInitialized(object sender, EventArgs e)
         {
-            new BusinessType(1, 55, "DealerShip", 100000);
-            new BusinessType(2, 6, "Ammunition", 50000);
-            new BusinessType(3, 63, "Pay'n'Spray", 40000);
-            new BusinessType(4, 27, "ModShop", 30000);
-            new BusinessType(5, 10, "Burget Shot", 60000);
-            new BusinessType(6, 14, "Cluckin Bell", 60000);
-            new BusinessType(7, 29, "Pizza Stack", 60000);
-            new BusinessType(8, 22, "Hospital", 500000);
-            new BusinessType(9, 48, "Night Club", 50000);
-            new BusinessType(10, 21, "Sex Shot", 30000);
-            new BusinessType(11, 7, "Barber", 20000);
-            new BusinessType(12, 52, "Bank", 40000);
+            //new BusinessType(1, 55, "DealerShip", 100000);
+            //new BusinessType(2, 6, "Ammunition", 50000);
+            //new BusinessType(3, 63, "Pay'n'Spray", 40000);
+            //new BusinessType(4, 27, "ModShop", 30000);
+            //new BusinessType(5, 10, "Burget Shot", 60000);
+            //new BusinessType(6, 14, "Cluckin Bell", 60000);
+            //new BusinessType(7, 29, "Pizza Stack", 60000);
+            //new BusinessType(8, 22, "Hospital", 500000);
+            //new BusinessType(9, 48, "Night Club", 50000);
+            //new BusinessType(10, 21, "Sex Shot", 30000);
+            //new BusinessType(11, 7, "Barber", 20000);
+            //new BusinessType(12, 52, "Bank", 40000);
 
             int props = 0;
             using (var conn = Database.Connect())
@@ -64,6 +59,7 @@ namespace Game.Controllers
                     "FROM business as A " +
                     "LEFT JOIN players as B ON A.id = B.business " +
                     "INNER JOIN properties AS C ON c.id = A.baseProperty", conn);
+
                 data = cmd.ExecuteReader();
 
                 while (data.Read())

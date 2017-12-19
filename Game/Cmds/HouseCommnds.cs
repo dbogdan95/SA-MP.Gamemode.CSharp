@@ -1,8 +1,7 @@
 ﻿using SampSharp.GameMode.SAMP.Commands;
 using SampSharp.GameMode.World;
-using Game.World.Property.House;
-using Game.World.Property;
-using Game.World.Property.Business;
+using Game.World.Properties;
+using Game.World.Players;
 
 namespace Game.Cmds
 {
@@ -50,7 +49,7 @@ namespace Game.Cmds
             player.RentedRoom = house;
             player.Money -= house.Rent;
 
-            house.Deposit += (int)(house.Rent - house.Rent * Common.TAX_PER_PER_PROPERTY);
+            house.Deposit += (int)(house.Rent - house.Rent * Common.TAX_HOUSE_PER_RENT);
             house.UpdateSql();
             house.PutPlayerIn(player);
         }

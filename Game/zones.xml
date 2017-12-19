@@ -1,0 +1,368 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<zones>
+  <zone name="The Big Ear" minx="-410.00" miny="1403.30" minz="-3.00" maxx="-137.90" maxy="1681.20" maxz="200.00" />
+  <zone name="Aldea Malvada" minx="-1372.10" miny="2498.50" minz="0.00" maxx="-1277.50" maxy="2615.30" maxz="200.00" />
+  <zone name="Angel Pine" minx="-2324.90" miny="-2584.20" minz="-6.10" maxx="-1964.20" maxy="-2212.10" maxz="200.00" />
+  <zone name="Arco del Oeste" minx="-901.10" miny="2221.80" minz="0.00" maxx="-592.00" maxy="2571.90" maxz="200.00" />
+  <zone name="Avispa Country Club" minx="-2646.40" miny="-355.40" minz="0.00" maxx="-2270.00" maxy="-222.50" maxz="200.00" />
+  <zone name="Avispa Country Club" minx="-2831.80" miny="-430.20" minz="-6.10" maxx="-2646.40" maxy="-222.50" maxz="200.00" />
+  <zone name="Avispa Country Club" minx="-2361.50" miny="-417.10" minz="0.00" maxx="-2270.00" maxy="-355.40" maxz="200.00" />
+  <zone name="Avispa Country Club" minx="-2667.80" miny="-302.10" minz="-28.80" maxx="-2646.40" maxy="-262.30" maxz="71.10" />
+  <zone name="Avispa Country Club" minx="-2470.00" miny="-355.40" minz="0.00" maxx="-2270.00" maxy="-318.40" maxz="46.10" />
+  <zone name="Avispa Country Club" minx="-2550.00" miny="-355.40" minz="0.00" maxx="-2470.00" maxy="-318.40" maxz="39.70" />
+  <zone name="Back o Beyond" minx="-1166.90" miny="-2641.10" minz="0.00" maxx="-321.70" maxy="-1856.00" maxz="200.00" />
+  <zone name="Battery Point" minx="-2741.00" miny="1268.40" minz="-4.50" maxx="-2533.00" maxy="1490.40" maxz="200.00" />
+  <zone name="Bayside" minx="-2741.00" miny="2175.10" minz="0.00" maxx="-2353.10" maxy="2722.70" maxz="200.00" />
+  <zone name="Bayside Marina" minx="-2353.10" miny="2275.70" minz="0.00" maxx="-2153.10" maxy="2475.70" maxz="200.00" />
+  <zone name="Beacon Hill" minx="-399.60" miny="-1075.50" minz="-1.40" maxx="-319.00" maxy="-977.50" maxz="198.50" />
+  <zone name="Blackfield" minx="964.30" miny="1203.20" minz="-89.00" maxx="1197.30" maxy="1403.20" maxz="110.90" />
+  <zone name="Blackfield" minx="964.30" miny="1403.20" minz="-89.00" maxx="1197.30" maxy="1726.20" maxz="110.90" />
+  <zone name="Blackfield Chapel" minx="1375.60" miny="596.30" minz="-89.00" maxx="1558.00" maxy="823.20" maxz="110.90" />
+  <zone name="Blackfield Chapel" minx="1325.60" miny="596.30" minz="-89.00" maxx="1375.60" maxy="795.00" maxz="110.90" />
+  <zone name="Blackfield Intersection" minx="1197.30" miny="1044.60" minz="-89.00" maxx="1277.00" maxy="1163.30" maxz="110.90" />
+  <zone name="Blackfield Intersection" minx="1166.50" miny="795.00" minz="-89.00" maxx="1375.60" maxy="1044.60" maxz="110.90" />
+  <zone name="Blackfield Intersection" minx="1277.00" miny="1044.60" minz="-89.00" maxx="1315.30" maxy="1087.60" maxz="110.90" />
+  <zone name="Blackfield Intersection" minx="1375.60" miny="823.20" minz="-89.00" maxx="1457.30" maxy="919.40" maxz="110.90" />
+  <zone name="Blueberry" minx="104.50" miny="-220.10" minz="2.30" maxx="349.60" maxy="152.20" maxz="200.00" />
+  <zone name="Blueberry" minx="19.60" miny="-404.10" minz="3.80" maxx="349.60" maxy="-220.10" maxz="200.00" />
+  <zone name="Blueberry Acres" minx="-319.60" miny="-220.10" minz="0.00" maxx="104.50" maxy="293.30" maxz="200.00" />
+  <zone name="Caligula's Palace" minx="2087.30" miny="1543.20" minz="-89.00" maxx="2437.30" maxy="1703.20" maxz="110.90" />
+  <zone name="Caligula's Palace" minx="2137.40" miny="1703.20" minz="-89.00" maxx="2437.30" maxy="1783.20" maxz="110.90" />
+  <zone name="Calton Heights" minx="-2274.10" miny="744.10" minz="-6.10" maxx="-1982.30" maxy="1358.90" maxz="200.00" />
+  <zone name="Chinatown" minx="-2274.10" miny="578.30" minz="-7.60" maxx="-2078.60" maxy="744.10" maxz="200.00" />
+  <zone name="City Hall" minx="-2867.80" miny="277.40" minz="-9.10" maxx="-2593.40" maxy="458.40" maxz="200.00" />
+  <zone name="Come-A-Lot" minx="2087.30" miny="943.20" minz="-89.00" maxx="2623.10" maxy="1203.20" maxz="110.90" />
+  <zone name="Commerce" minx="1323.90" miny="-1842.20" minz="-89.00" maxx="1701.90" maxy="-1722.20" maxz="110.90" />
+  <zone name="Commerce" minx="1323.90" miny="-1722.20" minz="-89.00" maxx="1440.90" maxy="-1577.50" maxz="110.90" />
+  <zone name="Commerce" minx="1370.80" miny="-1577.50" minz="-89.00" maxx="1463.90" maxy="-1384.90" maxz="110.90" />
+  <zone name="Commerce" minx="1463.90" miny="-1577.50" minz="-89.00" maxx="1667.90" maxy="-1430.80" maxz="110.90" />
+  <zone name="Commerce" minx="1583.50" miny="-1722.20" minz="-89.00" maxx="1758.90" maxy="-1577.50" maxz="110.90" />
+  <zone name="Commerce" minx="1667.90" miny="-1577.50" minz="-89.00" maxx="1812.60" maxy="-1430.80" maxz="110.90" />
+  <zone name="Conference Center" minx="1046.10" miny="-1804.20" minz="-89.00" maxx="1323.90" maxy="-1722.20" maxz="110.90" />
+  <zone name="Conference Center" minx="1073.20" miny="-1842.20" minz="-89.00" maxx="1323.90" maxy="-1804.20" maxz="110.90" />
+  <zone name="Cranberry Station" minx="-2007.80" miny="56.30" minz="0.00" maxx="-1922.00" maxy="224.70" maxz="100.00" />
+  <zone name="Creek" minx="2749.90" miny="1937.20" minz="-89.00" maxx="2921.60" maxy="2669.70" maxz="110.90" />
+  <zone name="Dillimore" minx="580.70" miny="-674.80" minz="-9.50" maxx="861.00" maxy="-404.70" maxz="200.00" />
+  <zone name="Doherty" minx="-2270.00" miny="-324.10" minz="-0.00" maxx="-1794.90" maxy="-222.50" maxz="200.00" />
+  <zone name="Doherty" minx="-2173.00" miny="-222.50" minz="-0.00" maxx="-1794.90" maxy="265.20" maxz="200.00" />
+  <zone name="Downtown" minx="-1982.30" miny="744.10" minz="-6.10" maxx="-1871.70" maxy="1274.20" maxz="200.00" />
+  <zone name="Downtown" minx="-1871.70" miny="1176.40" minz="-4.50" maxx="-1620.30" maxy="1274.20" maxz="200.00" />
+  <zone name="Downtown" minx="-1700.00" miny="744.20" minz="-6.10" maxx="-1580.00" maxy="1176.50" maxz="200.00" />
+  <zone name="Downtown" minx="-1580.00" miny="744.20" minz="-6.10" maxx="-1499.80" maxy="1025.90" maxz="200.00" />
+  <zone name="Downtown" minx="-2078.60" miny="578.30" minz="-7.60" maxx="-1499.80" maxy="744.20" maxz="200.00" />
+  <zone name="Downtown" minx="-1993.20" miny="265.20" minz="-9.10" maxx="-1794.90" maxy="578.30" maxz="200.00" />
+  <zone name="Downtown Los Santos" minx="1463.90" miny="-1430.80" minz="-89.00" maxx="1724.70" maxy="-1290.80" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1724.70" miny="-1430.80" minz="-89.00" maxx="1812.60" maxy="-1250.90" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1463.90" miny="-1290.80" minz="-89.00" maxx="1724.70" maxy="-1150.80" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1370.80" miny="-1384.90" minz="-89.00" maxx="1463.90" maxy="-1170.80" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1724.70" miny="-1250.90" minz="-89.00" maxx="1812.60" maxy="-1150.80" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1370.80" miny="-1170.80" minz="-89.00" maxx="1463.90" maxy="-1130.80" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1378.30" miny="-1130.80" minz="-89.00" maxx="1463.90" maxy="-1026.30" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1391.00" miny="-1026.30" minz="-89.00" maxx="1463.90" maxy="-926.90" maxz="110.90" />
+  <zone name="Downtown Los Santos" minx="1507.50" miny="-1385.20" minz="110.90" maxx="1582.50" maxy="-1325.30" maxz="335.90" />
+  <zone name="East Beach" minx="2632.80" miny="-1852.80" minz="-89.00" maxx="2959.30" maxy="-1668.10" maxz="110.90" />
+  <zone name="East Beach" minx="2632.80" miny="-1668.10" minz="-89.00" maxx="2747.70" maxy="-1393.40" maxz="110.90" />
+  <zone name="East Beach" minx="2747.70" miny="-1668.10" minz="-89.00" maxx="2959.30" maxy="-1498.60" maxz="110.90" />
+  <zone name="East Beach" minx="2747.70" miny="-1498.60" minz="-89.00" maxx="2959.30" maxy="-1120.00" maxz="110.90" />
+  <zone name="East Los Santos" minx="2421.00" miny="-1628.50" minz="-89.00" maxx="2632.80" maxy="-1454.30" maxz="110.90" />
+  <zone name="East Los Santos" minx="2222.50" miny="-1628.50" minz="-89.00" maxx="2421.00" maxy="-1494.00" maxz="110.90" />
+  <zone name="East Los Santos" minx="2266.20" miny="-1494.00" minz="-89.00" maxx="2381.60" maxy="-1372.00" maxz="110.90" />
+  <zone name="East Los Santos" minx="2381.60" miny="-1494.00" minz="-89.00" maxx="2421.00" maxy="-1454.30" maxz="110.90" />
+  <zone name="East Los Santos" minx="2281.40" miny="-1372.00" minz="-89.00" maxx="2381.60" maxy="-1135.00" maxz="110.90" />
+  <zone name="East Los Santos" minx="2381.60" miny="-1454.30" minz="-89.00" maxx="2462.10" maxy="-1135.00" maxz="110.90" />
+  <zone name="East Los Santos" minx="2462.10" miny="-1454.30" minz="-89.00" maxx="2581.70" maxy="-1135.00" maxz="110.90" />
+  <zone name="Easter Basin" minx="-1794.90" miny="249.90" minz="-9.10" maxx="-1242.90" maxy="578.30" maxz="200.00" />
+  <zone name="Easter Basin" minx="-1794.90" miny="-50.00" minz="-0.00" maxx="-1499.80" maxy="249.90" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1499.80" miny="-50.00" minz="-0.00" maxx="-1242.90" maxy="249.90" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1794.90" miny="-730.10" minz="-3.00" maxx="-1213.90" maxy="-50.00" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1213.90" miny="-730.10" minz="0.00" maxx="-1132.80" maxy="-50.00" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1242.90" miny="-50.00" minz="0.00" maxx="-1213.90" maxy="578.30" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1213.90" miny="-50.00" minz="-4.50" maxx="-947.90" maxy="578.30" maxz="200.00" />
+  <zone name="Easter Bay Airport" minx="-1315.40" miny="-405.30" minz="15.40" maxx="-1264.40" maxy="-209.50" maxz="25.40" />
+  <zone name="Easter Bay Airport" minx="-1354.30" miny="-287.30" minz="15.40" maxx="-1315.40" maxy="-209.50" maxz="25.40" />
+  <zone name="Easter Bay Airport" minx="-1490.30" miny="-209.50" minz="15.40" maxx="-1264.40" maxy="-148.30" maxz="25.40" />
+  <zone name="Easter Bay Chemicals" minx="-1132.80" miny="-768.00" minz="0.00" maxx="-956.40" maxy="-578.10" maxz="200.00" />
+  <zone name="Easter Bay Chemicals" minx="-1132.80" miny="-787.30" minz="0.00" maxx="-956.40" maxy="-768.00" maxz="200.00" />
+  <zone name="El Castillo del Diablo" minx="-464.50" miny="2217.60" minz="0.00" maxx="-208.50" maxy="2580.30" maxz="200.00" />
+  <zone name="El Castillo del Diablo" minx="-208.50" miny="2123.00" minz="-7.60" maxx="114.00" maxy="2337.10" maxz="200.00" />
+  <zone name="El Castillo del Diablo" minx="-208.50" miny="2337.10" minz="0.00" maxx="8.40" maxy="2487.10" maxz="200.00" />
+  <zone name="El Corona" minx="1812.60" miny="-2179.20" minz="-89.00" maxx="1970.60" maxy="-1852.80" maxz="110.90" />
+  <zone name="El Corona" minx="1692.60" miny="-2179.20" minz="-89.00" maxx="1812.60" maxy="-1842.20" maxz="110.90" />
+  <zone name="El Quebrados" minx="-1645.20" miny="2498.50" minz="0.00" maxx="-1372.10" maxy="2777.80" maxz="200.00" />
+  <zone name="Esplanade East" minx="-1620.30" miny="1176.50" minz="-4.50" maxx="-1580.00" maxy="1274.20" maxz="200.00" />
+  <zone name="Esplanade East" minx="-1580.00" miny="1025.90" minz="-6.10" maxx="-1499.80" maxy="1274.20" maxz="200.00" />
+  <zone name="Esplanade East" minx="-1499.80" miny="578.30" minz="-79.60" maxx="-1339.80" maxy="1274.20" maxz="20.30" />
+  <zone name="Esplanade North" minx="-2533.00" miny="1358.90" minz="-4.50" maxx="-1996.60" maxy="1501.20" maxz="200.00" />
+  <zone name="Esplanade North" minx="-1996.60" miny="1358.90" minz="-4.50" maxx="-1524.20" maxy="1592.50" maxz="200.00" />
+  <zone name="Esplanade North" minx="-1982.30" miny="1274.20" minz="-4.50" maxx="-1524.20" maxy="1358.90" maxz="200.00" />
+  <zone name="Fallen Tree" minx="-792.20" miny="-698.50" minz="-5.30" maxx="-452.40" maxy="-380.00" maxz="200.00" />
+  <zone name="Fallow Bridge" minx="434.30" miny="366.50" minz="0.00" maxx="603.00" maxy="555.60" maxz="200.00" />
+  <zone name="Fern Ridge" minx="508.10" miny="-139.20" minz="0.00" maxx="1306.60" maxy="119.50" maxz="200.00" />
+  <zone name="Financial" minx="-1871.70" miny="744.10" minz="-6.10" maxx="-1701.30" maxy="1176.40" maxz="300.00" />
+  <zone name="Fisher's Lagoon" minx="1916.90" miny="-233.30" minz="-100.00" maxx="2131.70" maxy="13.80" maxz="200.00" />
+  <zone name="Flint Intersection" minx="-187.70" miny="-1596.70" minz="-89.00" maxx="17.00" maxy="-1276.60" maxz="110.90" />
+  <zone name="Flint Range" minx="-594.10" miny="-1648.50" minz="0.00" maxx="-187.70" maxy="-1276.60" maxz="200.00" />
+  <zone name="Fort Carson" minx="-376.20" miny="826.30" minz="-3.00" maxx="123.70" maxy="1220.40" maxz="200.00" />
+  <zone name="Foster Valley" minx="-2270.00" miny="-430.20" minz="-0.00" maxx="-2178.60" maxy="-324.10" maxz="200.00" />
+  <zone name="Foster Valley" minx="-2178.60" miny="-599.80" minz="-0.00" maxx="-1794.90" maxy="-324.10" maxz="200.00" />
+  <zone name="Foster Valley" minx="-2178.60" miny="-1115.50" minz="0.00" maxx="-1794.90" maxy="-599.80" maxz="200.00" />
+  <zone name="Foster Valley" minx="-2178.60" miny="-1250.90" minz="0.00" maxx="-1794.90" maxy="-1115.50" maxz="200.00" />
+  <zone name="Frederick Bridge" minx="2759.20" miny="296.50" minz="0.00" maxx="2774.20" maxy="594.70" maxz="200.00" />
+  <zone name="Gant Bridge" minx="-2741.40" miny="1659.60" minz="-6.10" maxx="-2616.40" maxy="2175.10" maxz="200.00" />
+  <zone name="Gant Bridge" minx="-2741.00" miny="1490.40" minz="-6.10" maxx="-2616.40" maxy="1659.60" maxz="200.00" />
+  <zone name="Ganton" minx="2222.50" miny="-1852.80" minz="-89.00" maxx="2632.80" maxy="-1722.30" maxz="110.90" />
+  <zone name="Ganton" minx="2222.50" miny="-1722.30" minz="-89.00" maxx="2632.80" maxy="-1628.50" maxz="110.90" />
+  <zone name="Garcia" minx="-2411.20" miny="-222.50" minz="-0.00" maxx="-2173.00" maxy="265.20" maxz="200.00" />
+  <zone name="Garcia" minx="-2395.10" miny="-222.50" minz="-5.30" maxx="-2354.00" maxy="-204.70" maxz="200.00" />
+  <zone name="Garver Bridge" minx="-1339.80" miny="828.10" minz="-89.00" maxx="-1213.90" maxy="1057.00" maxz="110.90" />
+  <zone name="Garver Bridge" minx="-1213.90" miny="950.00" minz="-89.00" maxx="-1087.90" maxy="1178.90" maxz="110.90" />
+  <zone name="Garver Bridge" minx="-1499.80" miny="696.40" minz="-179.60" maxx="-1339.80" maxy="925.30" maxz="20.30" />
+  <zone name="Glen Park" minx="1812.60" miny="-1449.60" minz="-89.00" maxx="1996.90" maxy="-1350.70" maxz="110.90" />
+  <zone name="Glen Park" minx="1812.60" miny="-1100.80" minz="-89.00" maxx="1994.30" maxy="-973.30" maxz="110.90" />
+  <zone name="Glen Park" minx="1812.60" miny="-1350.70" minz="-89.00" maxx="2056.80" maxy="-1100.80" maxz="110.90" />
+  <zone name="Green Palms" minx="176.50" miny="1305.40" minz="-3.00" maxx="338.60" maxy="1520.70" maxz="200.00" />
+  <zone name="Greenglass College" minx="964.30" miny="1044.60" minz="-89.00" maxx="1197.30" maxy="1203.20" maxz="110.90" />
+  <zone name="Greenglass College" minx="964.30" miny="930.80" minz="-89.00" maxx="1166.50" maxy="1044.60" maxz="110.90" />
+  <zone name="Hampton Barns" minx="603.00" miny="264.30" minz="0.00" maxx="761.90" maxy="366.50" maxz="200.00" />
+  <zone name="Hankypanky Point" minx="2576.90" miny="62.10" minz="0.00" maxx="2759.20" maxy="385.50" maxz="200.00" />
+  <zone name="Harry Gold Parkway" minx="1777.30" miny="863.20" minz="-89.00" maxx="1817.30" maxy="2342.80" maxz="110.90" />
+  <zone name="Hashbury" minx="-2593.40" miny="-222.50" minz="-0.00" maxx="-2411.20" maxy="54.70" maxz="200.00" />
+  <zone name="Hilltop Farm" minx="967.30" miny="-450.30" minz="-3.00" maxx="1176.70" maxy="-217.90" maxz="200.00" />
+  <zone name="Hunter Quarry" minx="337.20" miny="710.80" minz="-115.20" maxx="860.50" maxy="1031.70" maxz="203.70" />
+  <zone name="Idlewood" minx="1812.60" miny="-1852.80" minz="-89.00" maxx="1971.60" maxy="-1742.30" maxz="110.90" />
+  <zone name="Idlewood" minx="1812.60" miny="-1742.30" minz="-89.00" maxx="1951.60" maxy="-1602.30" maxz="110.90" />
+  <zone name="Idlewood" minx="1951.60" miny="-1742.30" minz="-89.00" maxx="2124.60" maxy="-1602.30" maxz="110.90" />
+  <zone name="Idlewood" minx="1812.60" miny="-1602.30" minz="-89.00" maxx="2124.60" maxy="-1449.60" maxz="110.90" />
+  <zone name="Idlewood" minx="2124.60" miny="-1742.30" minz="-89.00" maxx="2222.50" maxy="-1494.00" maxz="110.90" />
+  <zone name="Idlewood" minx="1971.60" miny="-1852.80" minz="-89.00" maxx="2222.50" maxy="-1742.30" maxz="110.90" />
+  <zone name="Jefferson" minx="1996.90" miny="-1449.60" minz="-89.00" maxx="2056.80" maxy="-1350.70" maxz="110.90" />
+  <zone name="Jefferson" minx="2124.60" miny="-1494.00" minz="-89.00" maxx="2266.20" maxy="-1449.60" maxz="110.90" />
+  <zone name="Jefferson" minx="2056.80" miny="-1372.00" minz="-89.00" maxx="2281.40" maxy="-1210.70" maxz="110.90" />
+  <zone name="Jefferson" minx="2056.80" miny="-1210.70" minz="-89.00" maxx="2185.30" maxy="-1126.30" maxz="110.90" />
+  <zone name="Jefferson" minx="2185.30" miny="-1210.70" minz="-89.00" maxx="2281.40" maxy="-1154.50" maxz="110.90" />
+  <zone name="Jefferson" minx="2056.80" miny="-1449.60" minz="-89.00" maxx="2266.20" maxy="-1372.00" maxz="110.90" />
+  <zone name="Julius Thruway East" minx="2623.10" miny="943.20" minz="-89.00" maxx="2749.90" maxy="1055.90" maxz="110.90" />
+  <zone name="Julius Thruway East" minx="2685.10" miny="1055.90" minz="-89.00" maxx="2749.90" maxy="2626.50" maxz="110.90" />
+  <zone name="Julius Thruway East" minx="2536.40" miny="2442.50" minz="-89.00" maxx="2685.10" maxy="2542.50" maxz="110.90" />
+  <zone name="Julius Thruway East" minx="2625.10" miny="2202.70" minz="-89.00" maxx="2685.10" maxy="2442.50" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="2498.20" miny="2542.50" minz="-89.00" maxx="2685.10" maxy="2626.50" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="2237.40" miny="2542.50" minz="-89.00" maxx="2498.20" maxy="2663.10" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="2121.40" miny="2508.20" minz="-89.00" maxx="2237.40" maxy="2663.10" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="1938.80" miny="2508.20" minz="-89.00" maxx="2121.40" maxy="2624.20" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="1534.50" miny="2433.20" minz="-89.00" maxx="1848.40" maxy="2583.20" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="1848.40" miny="2478.40" minz="-89.00" maxx="1938.80" maxy="2553.40" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="1704.50" miny="2342.80" minz="-89.00" maxx="1848.40" maxy="2433.20" maxz="110.90" />
+  <zone name="Julius Thruway North" minx="1377.30" miny="2433.20" minz="-89.00" maxx="1534.50" maxy="2507.20" maxz="110.90" />
+  <zone name="Julius Thruway South" minx="1457.30" miny="823.20" minz="-89.00" maxx="2377.30" maxy="863.20" maxz="110.90" />
+  <zone name="Julius Thruway South" minx="2377.30" miny="788.80" minz="-89.00" maxx="2537.30" maxy="897.90" maxz="110.90" />
+  <zone name="Julius Thruway West" minx="1197.30" miny="1163.30" minz="-89.00" maxx="1236.60" maxy="2243.20" maxz="110.90" />
+  <zone name="Julius Thruway West" minx="1236.60" miny="2142.80" minz="-89.00" maxx="1297.40" maxy="2243.20" maxz="110.90" />
+  <zone name="Juniper Hill" minx="-2533.00" miny="578.30" minz="-7.60" maxx="-2274.10" maxy="968.30" maxz="200.00" />
+  <zone name="Juniper Hollow" minx="-2533.00" miny="968.30" minz="-6.10" maxx="-2274.10" maxy="1358.90" maxz="200.00" />
+  <zone name="K.A.C.C. Military Fuels" minx="2498.20" miny="2626.50" minz="-89.00" maxx="2749.90" maxy="2861.50" maxz="110.90" />
+  <zone name="Kincaid Bridge" minx="-1339.80" miny="599.20" minz="-89.00" maxx="-1213.90" maxy="828.10" maxz="110.90" />
+  <zone name="Kincaid Bridge" minx="-1213.90" miny="721.10" minz="-89.00" maxx="-1087.90" maxy="950.00" maxz="110.90" />
+  <zone name="Kincaid Bridge" minx="-1087.90" miny="855.30" minz="-89.00" maxx="-961.90" maxy="986.20" maxz="110.90" />
+  <zone name="King's" minx="-2329.30" miny="458.40" minz="-7.60" maxx="-1993.20" maxy="578.30" maxz="200.00" />
+  <zone name="King's" minx="-2411.20" miny="265.20" minz="-9.10" maxx="-1993.20" maxy="373.50" maxz="200.00" />
+  <zone name="King's" minx="-2253.50" miny="373.50" minz="-9.10" maxx="-1993.20" maxy="458.40" maxz="200.00" />
+  <zone name="LVA Freight Depot" minx="1457.30" miny="863.20" minz="-89.00" maxx="1777.40" maxy="1143.20" maxz="110.90" />
+  <zone name="LVA Freight Depot" minx="1375.60" miny="919.40" minz="-89.00" maxx="1457.30" maxy="1203.20" maxz="110.90" />
+  <zone name="LVA Freight Depot" minx="1277.00" miny="1087.60" minz="-89.00" maxx="1375.60" maxy="1203.20" maxz="110.90" />
+  <zone name="LVA Freight Depot" minx="1315.30" miny="1044.60" minz="-89.00" maxx="1375.60" maxy="1087.60" maxz="110.90" />
+  <zone name="LVA Freight Depot" minx="1236.60" miny="1163.40" minz="-89.00" maxx="1277.00" maxy="1203.20" maxz="110.90" />
+  <zone name="Las Barrancas" minx="-926.10" miny="1398.70" minz="-3.00" maxx="-719.20" maxy="1634.60" maxz="200.00" />
+  <zone name="Las Brujas" minx="-365.10" miny="2123.00" minz="-3.00" maxx="-208.50" maxy="2217.60" maxz="200.00" />
+  <zone name="Las Colinas" minx="1994.30" miny="-1100.80" minz="-89.00" maxx="2056.80" maxy="-920.80" maxz="110.90" />
+  <zone name="Las Colinas" minx="2056.80" miny="-1126.30" minz="-89.00" maxx="2126.80" maxy="-920.80" maxz="110.90" />
+  <zone name="Las Colinas" minx="2185.30" miny="-1154.50" minz="-89.00" maxx="2281.40" maxy="-934.40" maxz="110.90" />
+  <zone name="Las Colinas" minx="2126.80" miny="-1126.30" minz="-89.00" maxx="2185.30" maxy="-934.40" maxz="110.90" />
+  <zone name="Las Colinas" minx="2747.70" miny="-1120.00" minz="-89.00" maxx="2959.30" maxy="-945.00" maxz="110.90" />
+  <zone name="Las Colinas" minx="2632.70" miny="-1135.00" minz="-89.00" maxx="2747.70" maxy="-945.00" maxz="110.90" />
+  <zone name="Las Colinas" minx="2281.40" miny="-1135.00" minz="-89.00" maxx="2632.70" maxy="-945.00" maxz="110.90" />
+  <zone name="Las Payasadas" minx="-354.30" miny="2580.30" minz="2.00" maxx="-133.60" maxy="2816.80" maxz="200.00" />
+  <zone name="Las Venturas Airport" minx="1236.60" miny="1203.20" minz="-89.00" maxx="1457.30" maxy="1883.10" maxz="110.90" />
+  <zone name="Las Venturas Airport" minx="1457.30" miny="1203.20" minz="-89.00" maxx="1777.30" maxy="1883.10" maxz="110.90" />
+  <zone name="Las Venturas Airport" minx="1457.30" miny="1143.20" minz="-89.00" maxx="1777.40" maxy="1203.20" maxz="110.90" />
+  <zone name="Las Venturas Airport" minx="1515.80" miny="1586.40" minz="-12.50" maxx="1729.90" maxy="1714.50" maxz="87.50" />
+  <zone name="Last Dime Motel" minx="1823.00" miny="596.30" minz="-89.00" maxx="1997.20" maxy="823.20" maxz="110.90" />
+  <zone name="Leafy Hollow" minx="-1166.90" miny="-1856.00" minz="0.00" maxx="-815.60" maxy="-1602.00" maxz="200.00" />
+  <zone name="Liberty City" minx="-1000.00" miny="400.00" minz="1300.00" maxx="-700.00" maxy="600.00" maxz="1400.00" />
+  <zone name="Lil' Probe Inn" minx="-90.20" miny="1286.80" minz="-3.00" maxx="153.80" maxy="1554.10" maxz="200.00" />
+  <zone name="Linden Side" minx="2749.90" miny="943.20" minz="-89.00" maxx="2923.30" maxy="1198.90" maxz="110.90" />
+  <zone name="Linden Station" minx="2749.90" miny="1198.90" minz="-89.00" maxx="2923.30" maxy="1548.90" maxz="110.90" />
+  <zone name="Linden Station" minx="2811.20" miny="1229.50" minz="-39.50" maxx="2861.20" maxy="1407.50" maxz="60.40" />
+  <zone name="Little Mexico" minx="1701.90" miny="-1842.20" minz="-89.00" maxx="1812.60" maxy="-1722.20" maxz="110.90" />
+  <zone name="Little Mexico" minx="1758.90" miny="-1722.20" minz="-89.00" maxx="1812.60" maxy="-1577.50" maxz="110.90" />
+  <zone name="Los Flores" minx="2581.70" miny="-1454.30" minz="-89.00" maxx="2632.80" maxy="-1393.40" maxz="110.90" />
+  <zone name="Los Flores" minx="2581.70" miny="-1393.40" minz="-89.00" maxx="2747.70" maxy="-1135.00" maxz="110.90" />
+  <zone name="Los Santos International" minx="1249.60" miny="-2394.30" minz="-89.00" maxx="1852.00" maxy="-2179.20" maxz="110.90" />
+  <zone name="Los Santos International" minx="1852.00" miny="-2394.30" minz="-89.00" maxx="2089.00" maxy="-2179.20" maxz="110.90" />
+  <zone name="Los Santos International" minx="1382.70" miny="-2730.80" minz="-89.00" maxx="2201.80" maxy="-2394.30" maxz="110.90" />
+  <zone name="Los Santos International" minx="1974.60" miny="-2394.30" minz="-39.00" maxx="2089.00" maxy="-2256.50" maxz="60.90" />
+  <zone name="Los Santos International" minx="1400.90" miny="-2669.20" minz="-39.00" maxx="2189.80" maxy="-2597.20" maxz="60.90" />
+  <zone name="Los Santos International" minx="2051.60" miny="-2597.20" minz="-39.00" maxx="2152.40" maxy="-2394.30" maxz="60.90" />
+  <zone name="Marina" minx="647.70" miny="-1804.20" minz="-89.00" maxx="851.40" maxy="-1577.50" maxz="110.90" />
+  <zone name="Marina" minx="647.70" miny="-1577.50" minz="-89.00" maxx="807.90" maxy="-1416.20" maxz="110.90" />
+  <zone name="Marina" minx="807.90" miny="-1577.50" minz="-89.00" maxx="926.90" maxy="-1416.20" maxz="110.90" />
+  <zone name="Market" minx="787.40" miny="-1416.20" minz="-89.00" maxx="1072.60" maxy="-1310.20" maxz="110.90" />
+  <zone name="Market" minx="952.60" miny="-1310.20" minz="-89.00" maxx="1072.60" maxy="-1130.80" maxz="110.90" />
+  <zone name="Market" minx="1072.60" miny="-1416.20" minz="-89.00" maxx="1370.80" maxy="-1130.80" maxz="110.90" />
+  <zone name="Market" minx="926.90" miny="-1577.50" minz="-89.00" maxx="1370.80" maxy="-1416.20" maxz="110.90" />
+  <zone name="Market Station" minx="787.40" miny="-1410.90" minz="-34.10" maxx="866.00" maxy="-1310.20" maxz="65.80" />
+  <zone name="Martin Bridge" minx="-222.10" miny="293.30" minz="0.00" maxx="-122.10" maxy="476.40" maxz="200.00" />
+  <zone name="Missionary Hill" minx="-2994.40" miny="-811.20" minz="0.00" maxx="-2178.60" maxy="-430.20" maxz="200.00" />
+  <zone name="Montgomery" minx="1119.50" miny="119.50" minz="-3.00" maxx="1451.40" maxy="493.30" maxz="200.00" />
+  <zone name="Montgomery" minx="1451.40" miny="347.40" minz="-6.10" maxx="1582.40" maxy="420.80" maxz="200.00" />
+  <zone name="Montgomery Intersection" minx="1546.60" miny="208.10" minz="0.00" maxx="1745.80" maxy="347.40" maxz="200.00" />
+  <zone name="Montgomery Intersection" minx="1582.40" miny="347.40" minz="0.00" maxx="1664.60" maxy="401.70" maxz="200.00" />
+  <zone name="Mulholland" minx="1414.00" miny="-768.00" minz="-89.00" maxx="1667.60" maxy="-452.40" maxz="110.90" />
+  <zone name="Mulholland" minx="1281.10" miny="-452.40" minz="-89.00" maxx="1641.10" maxy="-290.90" maxz="110.90" />
+  <zone name="Mulholland" minx="1269.10" miny="-768.00" minz="-89.00" maxx="1414.00" maxy="-452.40" maxz="110.90" />
+  <zone name="Mulholland" minx="1357.00" miny="-926.90" minz="-89.00" maxx="1463.90" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="1318.10" miny="-910.10" minz="-89.00" maxx="1357.00" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="1169.10" miny="-910.10" minz="-89.00" maxx="1318.10" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="768.60" miny="-954.60" minz="-89.00" maxx="952.60" maxy="-860.60" maxz="110.90" />
+  <zone name="Mulholland" minx="687.80" miny="-860.60" minz="-89.00" maxx="911.80" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="737.50" miny="-768.00" minz="-89.00" maxx="1142.20" maxy="-674.80" maxz="110.90" />
+  <zone name="Mulholland" minx="1096.40" miny="-910.10" minz="-89.00" maxx="1169.10" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="952.60" miny="-937.10" minz="-89.00" maxx="1096.40" maxy="-860.60" maxz="110.90" />
+  <zone name="Mulholland" minx="911.80" miny="-860.60" minz="-89.00" maxx="1096.40" maxy="-768.00" maxz="110.90" />
+  <zone name="Mulholland" minx="861.00" miny="-674.80" minz="-89.00" maxx="1156.50" maxy="-600.80" maxz="110.90" />
+  <zone name="Mulholland Intersection" minx="1463.90" miny="-1150.80" minz="-89.00" maxx="1812.60" maxy="-768.00" maxz="110.90" />
+  <zone name="North Rock" minx="2285.30" miny="-768.00" minz="0.00" maxx="2770.50" maxy="-269.70" maxz="200.00" />
+  <zone name="Ocean Docks" minx="2373.70" miny="-2697.00" minz="-89.00" maxx="2809.20" maxy="-2330.40" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2201.80" miny="-2418.30" minz="-89.00" maxx="2324.00" maxy="-2095.00" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2324.00" miny="-2302.30" minz="-89.00" maxx="2703.50" maxy="-2145.10" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2089.00" miny="-2394.30" minz="-89.00" maxx="2201.80" maxy="-2235.80" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2201.80" miny="-2730.80" minz="-89.00" maxx="2324.00" maxy="-2418.30" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2703.50" miny="-2302.30" minz="-89.00" maxx="2959.30" maxy="-2126.90" maxz="110.90" />
+  <zone name="Ocean Docks" minx="2324.00" miny="-2145.10" minz="-89.00" maxx="2703.50" maxy="-2059.20" maxz="110.90" />
+  <zone name="Ocean Flats" minx="-2994.40" miny="277.40" minz="-9.10" maxx="-2867.80" maxy="458.40" maxz="200.00" />
+  <zone name="Ocean Flats" minx="-2994.40" miny="-222.50" minz="-0.00" maxx="-2593.40" maxy="277.40" maxz="200.00" />
+  <zone name="Ocean Flats" minx="-2994.40" miny="-430.20" minz="-0.00" maxx="-2831.80" maxy="-222.50" maxz="200.00" />
+  <zone name="Octane Springs" minx="338.60" miny="1228.50" minz="0.00" maxx="664.30" maxy="1655.00" maxz="200.00" />
+  <zone name="Old Venturas Strip" minx="2162.30" miny="2012.10" minz="-89.00" maxx="2685.10" maxy="2202.70" maxz="110.90" />
+  <zone name="Palisades" minx="-2994.40" miny="458.40" minz="-6.10" maxx="-2741.00" maxy="1339.60" maxz="200.00" />
+  <zone name="Palomino Creek" minx="2160.20" miny="-149.00" minz="0.00" maxx="2576.90" maxy="228.30" maxz="200.00" />
+  <zone name="Paradiso" minx="-2741.00" miny="793.40" minz="-6.10" maxx="-2533.00" maxy="1268.40" maxz="200.00" />
+  <zone name="Pershing Square" minx="1440.90" miny="-1722.20" minz="-89.00" maxx="1583.50" maxy="-1577.50" maxz="110.90" />
+  <zone name="Pilgrim" minx="2437.30" miny="1383.20" minz="-89.00" maxx="2624.40" maxy="1783.20" maxz="110.90" />
+  <zone name="Pilgrim" minx="2624.40" miny="1383.20" minz="-89.00" maxx="2685.10" maxy="1783.20" maxz="110.90" />
+  <zone name="Pilson Intersection" minx="1098.30" miny="2243.20" minz="-89.00" maxx="1377.30" maxy="2507.20" maxz="110.90" />
+  <zone name="Pirates in Men's Pants" minx="1817.30" miny="1469.20" minz="-89.00" maxx="2027.40" maxy="1703.20" maxz="110.90" />
+  <zone name="Playa del Seville" minx="2703.50" miny="-2126.90" minz="-89.00" maxx="2959.30" maxy="-1852.80" maxz="110.90" />
+  <zone name="Prickle Pine" minx="1534.50" miny="2583.20" minz="-89.00" maxx="1848.40" maxy="2863.20" maxz="110.90" />
+  <zone name="Prickle Pine" minx="1117.40" miny="2507.20" minz="-89.00" maxx="1534.50" maxy="2723.20" maxz="110.90" />
+  <zone name="Prickle Pine" minx="1848.40" miny="2553.40" minz="-89.00" maxx="1938.80" maxy="2863.20" maxz="110.90" />
+  <zone name="Prickle Pine" minx="1938.80" miny="2624.20" minz="-89.00" maxx="2121.40" maxy="2861.50" maxz="110.90" />
+  <zone name="Queens" minx="-2533.00" miny="458.40" minz="0.00" maxx="-2329.30" maxy="578.30" maxz="200.00" />
+  <zone name="Queens" minx="-2593.40" miny="54.70" minz="0.00" maxx="-2411.20" maxy="458.40" maxz="200.00" />
+  <zone name="Queens" minx="-2411.20" miny="373.50" minz="0.00" maxx="-2253.50" maxy="458.40" maxz="200.00" />
+  <zone name="Randolph Industrial Estate" minx="1558.00" miny="596.30" minz="-89.00" maxx="1823.00" maxy="823.20" maxz="110.90" />
+  <zone name="Redsands East" minx="1817.30" miny="2011.80" minz="-89.00" maxx="2106.70" maxy="2202.70" maxz="110.90" />
+  <zone name="Redsands East" minx="1817.30" miny="2202.70" minz="-89.00" maxx="2011.90" maxy="2342.80" maxz="110.90" />
+  <zone name="Redsands East" minx="1848.40" miny="2342.80" minz="-89.00" maxx="2011.90" maxy="2478.40" maxz="110.90" />
+  <zone name="Redsands West" minx="1236.60" miny="1883.10" minz="-89.00" maxx="1777.30" maxy="2142.80" maxz="110.90" />
+  <zone name="Redsands West" minx="1297.40" miny="2142.80" minz="-89.00" maxx="1777.30" maxy="2243.20" maxz="110.90" />
+  <zone name="Redsands West" minx="1377.30" miny="2243.20" minz="-89.00" maxx="1704.50" maxy="2433.20" maxz="110.90" />
+  <zone name="Redsands West" minx="1704.50" miny="2243.20" minz="-89.00" maxx="1777.30" maxy="2342.80" maxz="110.90" />
+  <zone name="Regular Tom" minx="-405.70" miny="1712.80" minz="-3.00" maxx="-276.70" maxy="1892.70" maxz="200.00" />
+  <zone name="Richman" minx="647.50" miny="-1118.20" minz="-89.00" maxx="787.40" maxy="-954.60" maxz="110.90" />
+  <zone name="Richman" minx="647.50" miny="-954.60" minz="-89.00" maxx="768.60" maxy="-860.60" maxz="110.90" />
+  <zone name="Richman" minx="225.10" miny="-1369.60" minz="-89.00" maxx="334.50" maxy="-1292.00" maxz="110.90" />
+  <zone name="Richman" minx="225.10" miny="-1292.00" minz="-89.00" maxx="466.20" maxy="-1235.00" maxz="110.90" />
+  <zone name="Richman" minx="72.60" miny="-1404.90" minz="-89.00" maxx="225.10" maxy="-1235.00" maxz="110.90" />
+  <zone name="Richman" minx="72.60" miny="-1235.00" minz="-89.00" maxx="321.30" maxy="-1008.10" maxz="110.90" />
+  <zone name="Richman" minx="321.30" miny="-1235.00" minz="-89.00" maxx="647.50" maxy="-1044.00" maxz="110.90" />
+  <zone name="Richman" minx="321.30" miny="-1044.00" minz="-89.00" maxx="647.50" maxy="-860.60" maxz="110.90" />
+  <zone name="Richman" minx="321.30" miny="-860.60" minz="-89.00" maxx="687.80" maxy="-768.00" maxz="110.90" />
+  <zone name="Richman" minx="321.30" miny="-768.00" minz="-89.00" maxx="700.70" maxy="-674.80" maxz="110.90" />
+  <zone name="Robada Intersection" minx="-1119.00" miny="1178.90" minz="-89.00" maxx="-862.00" maxy="1351.40" maxz="110.90" />
+  <zone name="Roca Escalante" minx="2237.40" miny="2202.70" minz="-89.00" maxx="2536.40" maxy="2542.50" maxz="110.90" />
+  <zone name="Roca Escalante" minx="2536.40" miny="2202.70" minz="-89.00" maxx="2625.10" maxy="2442.50" maxz="110.90" />
+  <zone name="Rockshore East" minx="2537.30" miny="676.50" minz="-89.00" maxx="2902.30" maxy="943.20" maxz="110.90" />
+  <zone name="Rockshore West" minx="1997.20" miny="596.30" minz="-89.00" maxx="2377.30" maxy="823.20" maxz="110.90" />
+  <zone name="Rockshore West" minx="2377.30" miny="596.30" minz="-89.00" maxx="2537.30" maxy="788.80" maxz="110.90" />
+  <zone name="Rodeo" minx="72.60" miny="-1684.60" minz="-89.00" maxx="225.10" maxy="-1544.10" maxz="110.90" />
+  <zone name="Rodeo" minx="72.60" miny="-1544.10" minz="-89.00" maxx="225.10" maxy="-1404.90" maxz="110.90" />
+  <zone name="Rodeo" minx="225.10" miny="-1684.60" minz="-89.00" maxx="312.80" maxy="-1501.90" maxz="110.90" />
+  <zone name="Rodeo" minx="225.10" miny="-1501.90" minz="-89.00" maxx="334.50" maxy="-1369.60" maxz="110.90" />
+  <zone name="Rodeo" minx="334.50" miny="-1501.90" minz="-89.00" maxx="422.60" maxy="-1406.00" maxz="110.90" />
+  <zone name="Rodeo" minx="312.80" miny="-1684.60" minz="-89.00" maxx="422.60" maxy="-1501.90" maxz="110.90" />
+  <zone name="Rodeo" minx="422.60" miny="-1684.60" minz="-89.00" maxx="558.00" maxy="-1570.20" maxz="110.90" />
+  <zone name="Rodeo" minx="558.00" miny="-1684.60" minz="-89.00" maxx="647.50" maxy="-1384.90" maxz="110.90" />
+  <zone name="Rodeo" minx="466.20" miny="-1570.20" minz="-89.00" maxx="558.00" maxy="-1385.00" maxz="110.90" />
+  <zone name="Rodeo" minx="422.60" miny="-1570.20" minz="-89.00" maxx="466.20" maxy="-1406.00" maxz="110.90" />
+  <zone name="Rodeo" minx="466.20" miny="-1385.00" minz="-89.00" maxx="647.50" maxy="-1235.00" maxz="110.90" />
+  <zone name="Rodeo" minx="334.50" miny="-1406.00" minz="-89.00" maxx="466.20" maxy="-1292.00" maxz="110.90" />
+  <zone name="Royal Casino" minx="2087.30" miny="1383.20" minz="-89.00" maxx="2437.30" maxy="1543.20" maxz="110.90" />
+  <zone name="San Andreas Sound" minx="2450.30" miny="385.50" minz="-100.00" maxx="2759.20" maxy="562.30" maxz="200.00" />
+  <zone name="Santa Flora" minx="-2741.00" miny="458.40" minz="-7.60" maxx="-2533.00" maxy="793.40" maxz="200.00" />
+  <zone name="Santa Maria Beach" minx="342.60" miny="-2173.20" minz="-89.00" maxx="647.70" maxy="-1684.60" maxz="110.90" />
+  <zone name="Santa Maria Beach" minx="72.60" miny="-2173.20" minz="-89.00" maxx="342.60" maxy="-1684.60" maxz="110.90" />
+  <zone name="Shady Cabin" minx="-1632.80" miny="-2263.40" minz="-3.00" maxx="-1601.30" maxy="-2231.70" maxz="200.00" />
+  <zone name="Shady Creeks" minx="-1820.60" miny="-2643.60" minz="-8.00" maxx="-1226.70" maxy="-1771.60" maxz="200.00" />
+  <zone name="Shady Creeks" minx="-2030.10" miny="-2174.80" minz="-6.10" maxx="-1820.60" maxy="-1771.60" maxz="200.00" />
+  <zone name="Sobell Rail Yards" minx="2749.90" miny="1548.90" minz="-89.00" maxx="2923.30" maxy="1937.20" maxz="110.90" />
+  <zone name="Spinybed" minx="2121.40" miny="2663.10" minz="-89.00" maxx="2498.20" maxy="2861.50" maxz="110.90" />
+  <zone name="Starfish Casino" minx="2437.30" miny="1783.20" minz="-89.00" maxx="2685.10" maxy="2012.10" maxz="110.90" />
+  <zone name="Starfish Casino" minx="2437.30" miny="1858.10" minz="-39.00" maxx="2495.00" maxy="1970.80" maxz="60.90" />
+  <zone name="Starfish Casino" minx="2162.30" miny="1883.20" minz="-89.00" maxx="2437.30" maxy="2012.10" maxz="110.90" />
+  <zone name="Temple" minx="1252.30" miny="-1130.80" minz="-89.00" maxx="1378.30" maxy="-1026.30" maxz="110.90" />
+  <zone name="Temple" minx="1252.30" miny="-1026.30" minz="-89.00" maxx="1391.00" maxy="-926.90" maxz="110.90" />
+  <zone name="Temple" minx="1252.30" miny="-926.90" minz="-89.00" maxx="1357.00" maxy="-910.10" maxz="110.90" />
+  <zone name="Temple" minx="952.60" miny="-1130.80" minz="-89.00" maxx="1096.40" maxy="-937.10" maxz="110.90" />
+  <zone name="Temple" minx="1096.40" miny="-1130.80" minz="-89.00" maxx="1252.30" maxy="-1026.30" maxz="110.90" />
+  <zone name="Temple" minx="1096.40" miny="-1026.30" minz="-89.00" maxx="1252.30" maxy="-910.10" maxz="110.90" />
+  <zone name="The Camel's Toe" minx="2087.30" miny="1203.20" minz="-89.00" maxx="2640.40" maxy="1383.20" maxz="110.90" />
+  <zone name="The Clown's Pocket" minx="2162.30" miny="1783.20" minz="-89.00" maxx="2437.30" maxy="1883.20" maxz="110.90" />
+  <zone name="The Emerald Isle" minx="2011.90" miny="2202.70" minz="-89.00" maxx="2237.40" maxy="2508.20" maxz="110.90" />
+  <zone name="The Farm" minx="-1209.60" miny="-1317.10" minz="114.90" maxx="-908.10" maxy="-787.30" maxz="251.90" />
+  <zone name="The Four Dragons Casino" minx="1817.30" miny="863.20" minz="-89.00" maxx="2027.30" maxy="1083.20" maxz="110.90" />
+  <zone name="The High Roller" minx="1817.30" miny="1283.20" minz="-89.00" maxx="2027.30" maxy="1469.20" maxz="110.90" />
+  <zone name="The Mako Span" minx="1664.60" miny="401.70" minz="0.00" maxx="1785.10" maxy="567.20" maxz="200.00" />
+  <zone name="The Panopticon" minx="-947.90" miny="-304.30" minz="-1.10" maxx="-319.60" maxy="327.00" maxz="200.00" />
+  <zone name="The Pink Swan" minx="1817.30" miny="1083.20" minz="-89.00" maxx="2027.30" maxy="1283.20" maxz="110.90" />
+  <zone name="The Sherman Dam" minx="-968.70" miny="1929.40" minz="-3.00" maxx="-481.10" maxy="2155.20" maxz="200.00" />
+  <zone name="The Strip" minx="2027.40" miny="863.20" minz="-89.00" maxx="2087.30" maxy="1703.20" maxz="110.90" />
+  <zone name="The Strip" minx="2106.70" miny="1863.20" minz="-89.00" maxx="2162.30" maxy="2202.70" maxz="110.90" />
+  <zone name="The Strip" minx="2027.40" miny="1783.20" minz="-89.00" maxx="2162.30" maxy="1863.20" maxz="110.90" />
+  <zone name="The Strip" minx="2027.40" miny="1703.20" minz="-89.00" maxx="2137.40" maxy="1783.20" maxz="110.90" />
+  <zone name="The Visage" minx="1817.30" miny="1863.20" minz="-89.00" maxx="2106.70" maxy="2011.80" maxz="110.90" />
+  <zone name="The Visage" minx="1817.30" miny="1703.20" minz="-89.00" maxx="2027.40" maxy="1863.20" maxz="110.90" />
+  <zone name="Unity Station" minx="1692.60" miny="-1971.80" minz="-20.40" maxx="1812.60" maxy="-1932.80" maxz="79.50" />
+  <zone name="Valle Ocultado" minx="-936.60" miny="2611.40" minz="2.00" maxx="-715.90" maxy="2847.90" maxz="200.00" />
+  <zone name="Verdant Bluffs" minx="930.20" miny="-2488.40" minz="-89.00" maxx="1249.60" maxy="-2006.70" maxz="110.90" />
+  <zone name="Verdant Bluffs" minx="1073.20" miny="-2006.70" minz="-89.00" maxx="1249.60" maxy="-1842.20" maxz="110.90" />
+  <zone name="Verdant Bluffs" minx="1249.60" miny="-2179.20" minz="-89.00" maxx="1692.60" maxy="-1842.20" maxz="110.90" />
+  <zone name="Verdant Meadows" minx="37.00" miny="2337.10" minz="-3.00" maxx="435.90" maxy="2677.90" maxz="200.00" />
+  <zone name="Verona Beach" minx="647.70" miny="-2173.20" minz="-89.00" maxx="930.20" maxy="-1804.20" maxz="110.90" />
+  <zone name="Verona Beach" minx="930.20" miny="-2006.70" minz="-89.00" maxx="1073.20" maxy="-1804.20" maxz="110.90" />
+  <zone name="Verona Beach" minx="851.40" miny="-1804.20" minz="-89.00" maxx="1046.10" maxy="-1577.50" maxz="110.90" />
+  <zone name="Verona Beach" minx="1161.50" miny="-1722.20" minz="-89.00" maxx="1323.90" maxy="-1577.50" maxz="110.90" />
+  <zone name="Verona Beach" minx="1046.10" miny="-1722.20" minz="-89.00" maxx="1161.50" maxy="-1577.50" maxz="110.90" />
+  <zone name="Vinewood" minx="787.40" miny="-1310.20" minz="-89.00" maxx="952.60" maxy="-1130.80" maxz="110.90" />
+  <zone name="Vinewood" minx="787.40" miny="-1130.80" minz="-89.00" maxx="952.60" maxy="-954.60" maxz="110.90" />
+  <zone name="Vinewood" minx="647.50" miny="-1227.20" minz="-89.00" maxx="787.40" maxy="-1118.20" maxz="110.90" />
+  <zone name="Vinewood" minx="647.70" miny="-1416.20" minz="-89.00" maxx="787.40" maxy="-1227.20" maxz="110.90" />
+  <zone name="Whitewood Estates" minx="883.30" miny="1726.20" minz="-89.00" maxx="1098.30" maxy="2507.20" maxz="110.90" />
+  <zone name="Whitewood Estates" minx="1098.30" miny="1726.20" minz="-89.00" maxx="1197.30" maxy="2243.20" maxz="110.90" />
+  <zone name="Willowfield" minx="1970.60" miny="-2179.20" minz="-89.00" maxx="2089.00" maxy="-1852.80" maxz="110.90" />
+  <zone name="Willowfield" minx="2089.00" miny="-2235.80" minz="-89.00" maxx="2201.80" maxy="-1989.90" maxz="110.90" />
+  <zone name="Willowfield" minx="2089.00" miny="-1989.90" minz="-89.00" maxx="2324.00" maxy="-1852.80" maxz="110.90" />
+  <zone name="Willowfield" minx="2201.80" miny="-2095.00" minz="-89.00" maxx="2324.00" maxy="-1989.90" maxz="110.90" />
+  <zone name="Willowfield" minx="2541.70" miny="-1941.40" minz="-89.00" maxx="2703.50" maxy="-1852.80" maxz="110.90" />
+  <zone name="Willowfield" minx="2324.00" miny="-2059.20" minz="-89.00" maxx="2541.70" maxy="-1852.80" maxz="110.90" />
+  <zone name="Willowfield" minx="2541.70" miny="-2059.20" minz="-89.00" maxx="2703.50" maxy="-1941.40" maxz="110.90" />
+  <zone name="Yellow Bell Station" minx="1377.40" miny="2600.40" minz="-21.90" maxx="1492.40" maxy="2687.30" maxz="78.00" />
+  <zone name="Los Santos" minx="44.60" miny="-2892.90" minz="-242.90" maxx="2997.00" maxy="-768.00" maxz="900.00" />
+  <zone name="Las Venturas" minx="869.40" miny="596.30" minz="-242.90" maxx="2997.00" maxy="2993.80" maxz="900.00" />
+  <zone name="San Fierro" minx="-2997.40" miny="-1115.50" minz="-242.90" maxx="-1213.90" maxy="1659.60" maxz="900.00" />
+  <zone name="Bone County" minx="-480.50" miny="596.30" minz="-242.90" maxx="869.40" maxy="2993.80" maxz="900.00" />
+  <zone name="Tierra Robada" minx="-2997.40" miny="1659.60" minz="-242.90" maxx="-480.50" maxy="2993.80" maxz="900.00" />
+  <zone name="Tierra Robada" minx="-1213.90" miny="596.30" minz="-242.90" maxx="-480.50" maxy="1659.60" maxz="900.00" />
+  <zone name="Red County" minx="-1213.90" miny="-768.00" minz="-242.90" maxx="2997.00" maxy="596.30" maxz="900.00" />
+  <zone name="Flint County" minx="-1213.90" miny="-2892.90" minz="-242.90" maxx="44.60" maxy="-768.00" maxz="900.00" />
+  <zone name="Whetstone" minx="-2997.40" miny="-2892.90" minz="-242.90" maxx="-1213.90" maxy="-1115.50" maxz="900.00" />
+</zones>

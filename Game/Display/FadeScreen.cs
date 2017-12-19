@@ -1,9 +1,8 @@
-﻿using SampSharp.GameMode;
+﻿using Game.World.Players;
+using SampSharp.GameMode;
 using SampSharp.GameMode.Display;
 using SampSharp.GameMode.SAMP;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Game.Display
 {

@@ -9,7 +9,7 @@ using SampSharp.GameMode.World;
 using SampSharp.GameMode.Events;
 using SampSharp.GameMode.Pools;
 
-namespace Game
+namespace Game.World
 {
     public partial class CornPlant : IdentifiedOwnedPool<CornPlant, DynamicArea>
     {
