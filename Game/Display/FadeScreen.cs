@@ -6,7 +6,7 @@ using System;
 
 namespace Game.Display
 {
-    class FadeScreen
+    public class FadeScreen
     {
         static int FRAMES = 100;
         static byte MAX_TRANSPARENCY = 0xFF;
@@ -22,42 +22,44 @@ namespace Game.Display
         int __tpf;
         FadeScreenMode __mode;
         PlayerTextDraw __tdx;
-        System.Timers.Timer __timer;
+        System.Timers.Timer __timer = new System.Timers.Timer(FRAMES);
 
         bool __CompleteModeSwicher;
 
-        public FadeScreen(Player player, int ms)
+        public FadeScreen(Player player)
         {
-            __Fade(player, ms, FadeScreenMode.ModeFadeIn, Color.Black);
-        }
-
-        public FadeScreen(Player player, int ms, FadeScreenMode mode)
-        {
-            __Fade(player, ms, mode, Color.Black);
-        }
-
-        public FadeScreen(Player player, int ms, FadeScreenMode mode, Color tocolor)
-        {
-            __Fade(player, ms, mode, tocolor);
-        }
-
-        ~FadeScreen()
-        {
-            Console.WriteLine("Kill FadeScreen");
-        }
-
-        public void Start()
-        {
-            __timer = new System.Timers.Timer(FRAMES);
+            __player = player;
             __timer.Elapsed += __timer_Elapsed;
+            __tdx = new PlayerTextDraw(__player)
+            {
+                Position = new Vector2(-20.0, -20.0),
+                Font = SampSharp.GameMode.Definitions.TextDrawFont.Pricedown,
+                LetterSize = new Vector2(680.0, 500.0),
+                UseBox = true
+            };
 
-            __tdx.Show();
-            __timer.Start();
+            player.Disconnected += Player_Disconnected;
         }
+
+        public void Start(int ms)
+        {
+            __FadeScreen(ms, FadeScreenMode.ModeFadeIn, Color.Black);
+        }
+
+        public void Start(int ms, FadeScreenMode mode)
+        {
+            __FadeScreen(ms, mode, Color.Black);
+        }
+
+        public void Start(int ms, FadeScreenMode mode, Color tocolor)
+        {
+            __FadeScreen(ms, mode, tocolor);
+        }
+
+        public bool IsFading => __timer.Enabled;
 
         private void __timer_Elapsed(object sender, System.Timers.ElapsedEventArgs e)
         {
-            bool end = false;
             switch(__mode)
             {
                 case FadeScreenMode.ModeFadeIn:
@@ -69,8 +71,6 @@ namespace Game.Display
                             ScreenFadeEnd?.Invoke(__player, new FadeScreenEventArgs(__player, FadeScreenMode.ModeFadeIn));
 
                             __timer.Stop();
-                            __timer.Dispose();
-                            end = true;
                         }
                         break;
                     }
@@ -83,8 +83,6 @@ namespace Game.Display
                             ScreenFadeEnd?.Invoke(__player, new FadeScreenEventArgs(__player, FadeScreenMode.ModeFadeOut));
 
                             __timer.Stop();
-                            __timer.Dispose();
-                            end = true;
                         }
                         break;
                     }
@@ -108,8 +106,6 @@ namespace Game.Display
                             {
                                 ScreenFadeEnd?.Invoke(__player, new FadeScreenEventArgs(__player, FadeScreenMode.ModeComplete));
                                 __timer.Stop();
-                                __timer.Dispose();
-                                end = true;
                             }
                         }
                         break;
@@ -120,9 +116,6 @@ namespace Game.Display
             color = __tdx.BoxColor;
             color.A = __alpha;
             __tdx.BoxColor = color;
-
-            if (end)
-                __tdx.Dispose();
 
             Console.WriteLine("__timer_Elapsed");
         }
@@ -143,12 +136,14 @@ namespace Game.Display
                 return Convert.ToByte(v);
         }
 
-        private void __Fade(Player player, int ms, FadeScreenMode mode, Color tocolor)
+        private void __FadeScreen(int ms, FadeScreenMode mode, Color tocolor)
         {
+            if (__timer.Enabled)
+                __timer.Stop();
+
             if (ms < FRAMES)
                 ms = FRAMES;
 
-            __player = player;
             __alpha = ((mode == FadeScreenMode.ModeFadeIn || mode == FadeScreenMode.ModeComplete) ? (byte)0 : MAX_TRANSPARENCY);
             __mode = mode;
             __color = tocolor;
@@ -163,19 +158,11 @@ namespace Game.Display
             if (__tpf <= 0)
                 __tpf = 10;
 
-            __tdx = new PlayerTextDraw(player)
-            {
-                Position = new Vector2(-20.0, -20.0),
-                Text = "_",
-                Font = SampSharp.GameMode.Definitions.TextDrawFont.Pricedown,
-                LetterSize = new Vector2(680.0, 500.0),
-                UseBox = true
-            };
-
             tocolor.A = __alpha;
             __tdx.BoxColor = tocolor;
 
-            player.Disconnected += Player_Disconnected;
+            __tdx.Show();
+            __timer.Start();
         }
 
         private void Player_Disconnected(object sender, SampSharp.GameMode.Events.DisconnectEventArgs e)

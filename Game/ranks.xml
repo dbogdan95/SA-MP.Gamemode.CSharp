@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ranks>
+  <TypePolice>
+    <name>Police Officer</name>
+    <name>Detective</name>
+    <name>Sergeant</name>
+    <name>Sergeant major</name>
+    <name>Inspector</name>
+    <name>Corporal</name>
+    <name>Chief of Department</name>
+  </TypePolice>
+  <TypeFBI>
+    <name>New Agent Trainee</name>
+    <name>Special Agent</name>
+    <name>Senior Resident Agent</name>
+    <name>Assistant Director</name>
+    <name>Deputy Chief of Staff</name>
+    <name>Deputy Director</name>
+    <name>Director</name>
+  </TypeFBI>
+  <TypeArmy>
+    <name>Private I</name>
+    <name>Private II</name>
+    <name>Private First Class</name>
+    <name>Specialist</name>
+    <name>Corporal</name>
+    <name>Sergeant</name>
+    <name>Command Sergeant Major</name>
+  </TypeArmy>
+  <TypeGang>
+    <name>Piccioto</name>
+    <name>Soldato</name>
+    <name>Capo Bastone</name>
+    <name>Sgarrista</name>
+    <name>Caporegime</name>
+    <name>Underboss</name>
+    <name>Godfather</name>
+  </TypeGang>
+  <TypeReporters>
+    <name>Intern</name>
+    <name>Local Reporter</name>
+    <name>Local Editor</name>
+    <name>Land reporter</name>
+    <name>Network Anchor</name>
+    <name>Network Assistant</name>
+    <name>Network Director</name>
+  </TypeReporters>
+  <TypeMedics>
+    <name>Assistant</name>
+    <name>Anaesthesiologist</name>
+    <name>Doctor</name>
+    <name>Medical Technician</name>
+    <name>Surgeon</name>
+    <name>Cardiologist</name>
+    <name>Director</name>
+  </TypeMedics>
+  <TypeTaxi>
+    <name>Trainee</name>
+    <name>Taxi Rookie</name>
+    <name>Cabbie</name>
+    <name>Shift Supervisor</name>
+    <name>Royal</name>
+    <name>Assistant</name>
+    <name>Director</name>
+  </TypeTaxi>
+  <TypeHitman>
+    <name>Freelancer</name>
+    <name>Marksmen</name>
+    <name>Agent</name>
+    <name>Special Agent</name>
+    <name>Senior Special Agent</name>
+    <name>Assistant</name>
+    <name>Director</name>
+  </TypeHitman>
+  <TypeInstructors>
+    <name>Professor</name>
+    <name>Teaching assistant</name>
+    <name>Adjunct instructor</name>
+    <name>Lecturer</name>
+    <name>Research professor</name>
+    <name>Honorary professor</name>
+    <name>Director</name>
+  </TypeInstructors>
+</ranks>

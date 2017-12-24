@@ -13,6 +13,7 @@ namespace Game.Accounts
             {
                 Save();
             }
+            __player.MyAccount.Dispose();
         }
     }
 }

@@ -113,7 +113,7 @@ namespace Game.Accounts
 
         private void Gender_Response(object sender, DialogResponseEventArgs e)
         {
-            Gender = (byte)(e.DialogButton == DialogButton.Left ? 1 : 2);
+            Gender = (e.DialogButton == DialogButton.Left ? GenderType.GenderMale : GenderType.GenderFemale);
             Insert();
 
             MessageDialog message = new MessageDialog("Done", "Great!\nNow, let's get started!", "Yay!");

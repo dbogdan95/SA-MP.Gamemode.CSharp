@@ -14,7 +14,6 @@ namespace Game.Core
 
         static Database()
         {
-            Console.WriteLine("Database");
             var builder = new ConfigurationBuilder()
                                     .SetBasePath(Directory.GetCurrentDirectory())
                                     .AddJsonFile("config.json");
@@ -51,7 +50,7 @@ namespace Game.Core
             }
             catch (Exception ex)
             {
-                Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+                Console.WriteLine("DATABASE: *** " + ex.ToString());
                 return null;
             }
         }
@@ -71,7 +70,7 @@ namespace Game.Core
                 }
                 catch (Exception ex)
                 {
-                    Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+                    Console.WriteLine("DATABASE: *** " + ex.ToString());
                 }
             }
         }*/
@@ -90,7 +89,7 @@ namespace Game.Core
         //    }
         //    catch (Exception ex)
         //    {
-        //        Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //        Console.WriteLine("DATABASE: *** " + ex.ToString());
         //        return null;
         //    }
         //}
@@ -131,7 +130,7 @@ namespace Game.Core
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //            Console.WriteLine("DATABASE: *** " + ex.ToString());
         //            return null;
         //        }
         //    }
@@ -150,7 +149,7 @@ namespace Game.Core
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //            Console.WriteLine("DATABASE: *** " + ex.ToString());
         //            return null;
         //        }
         //    }
@@ -172,7 +171,7 @@ namespace Game.Core
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //            Console.WriteLine("DATABASE: *** " + ex.ToString());
         //        }
         //    }
         //}
@@ -195,7 +194,7 @@ namespace Game.Core
         //        }
         //        catch (Exception ex)
         //        {
-        //            Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //            Console.WriteLine("DATABASE: *** " + ex.ToString());
         //            return null;
         //        }
         //    }
@@ -209,7 +208,7 @@ namespace Game.Core
         //    }
         //    catch (Exception ex)
         //    {
-        //        Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //        Console.WriteLine("DATABASE: *** " + ex.ToString());
         //    }
         //}
 
@@ -223,7 +222,7 @@ namespace Game.Core
         //    }
         //    catch (Exception ex)
         //    {
-        //        Console.WriteLine("DATABASE: [ERROR] " + ex.ToString());
+        //        Console.WriteLine("DATABASE: *** " + ex.ToString());
         //    }
         //}
     }

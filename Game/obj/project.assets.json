@@ -7173,26 +7173,26 @@
     "frameworks": {
       "netcoreapp2.0": {
         "dependencies": {
-          "SampSharp.Core": {
+          "Microsoft.NETCore.App": {
             "target": "Package",
-            "version": "0.8.0-alpha3"
+            "version": "[2.0.0, )",
+            "autoReferenced": true
           },
           "MySql.Data": {
             "target": "Package",
-            "version": "8.0.9-dmr"
-          },
-          "Microsoft.NETCore.App": {
-            "target": "Package",
-            "version": "2.0",
-            "autoReferenced": true
-          },
-          "SampSharp.GameMode": {
-            "target": "Package",
-            "version": "0.8.0-alpha2"
+            "version": "[8.0.9-dmr, )"
           },
           "Newtonsoft.Json": {
             "target": "Package",
-            "version": "10.0.3"
+            "version": "[10.0.3, )"
+          },
+          "SampSharp.Core": {
+            "target": "Package",
+            "version": "[0.8.0-alpha3, )"
+          },
+          "SampSharp.GameMode": {
+            "target": "Package",
+            "version": "[0.8.0-alpha2, )"
           }
         },
         "imports": [

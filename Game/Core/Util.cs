@@ -2,6 +2,7 @@
 using SampSharp.GameMode;
 using SampSharp.GameMode.World;
 using System;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -67,7 +68,7 @@ namespace Game
 
         public static void PlaySoundInRangeOfPoint(Sounds snd, Vector3 src, float range)
         {
-            foreach (Player next in BasePlayer.GetAll<Player>())
+            foreach (Player next in BasePlayer.GetAll<Player>().ToArray())
             {
                 if(src.DistanceTo(next.Position) < range)
                 {

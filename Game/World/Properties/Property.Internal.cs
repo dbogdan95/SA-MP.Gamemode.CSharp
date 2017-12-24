@@ -18,8 +18,13 @@ namespace Game.World.Properties
             __type = type;
             __area = DynamicArea.CreateSphere(pos, 1.5f);
             __pickup = new DynamicPickup((int)type, 23, pos);
-            __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
-            __label.TestLOS = true;
+
+            if (type != PropertyType.TypeGeneric)
+            {
+                __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
+                __label.TestLOS = true;
+            }
+            
             __pos = pos;
             __angle = angle;
             __price = 0;
@@ -35,14 +40,13 @@ namespace Game.World.Properties
             if (player.Lift || player.State != SampSharp.GameMode.Definitions.PlayerState.OnFoot)
                 return;
 
-            if (player.PropertyTranslation)
+            if (player.FadeScreen.IsFading)
                 return;
 
             player.PropertyTranslation = true;
             player.PropertyDirection = In;
 
-            FadeScreen fade = new FadeScreen(player, 2000, FadeScreenMode.ModeComplete);
-            fade.ScreenFadeEnd += (sender, e) =>
+            player.FadeScreen.ScreenFadeEnd += (sender, e) =>
             {
                 Player pl = e.Player as Player;
 
@@ -57,7 +61,7 @@ namespace Game.World.Properties
                 if (e.Mode == FadeScreenMode.ModeComplete)
                     pl.PropertyTranslation = false;
             };
-            fade.Start();
+            player.FadeScreen.Start(2000, FadeScreenMode.ModeComplete);
         }
     }
 }

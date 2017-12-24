@@ -20,6 +20,9 @@ using Game.World.PaynSprays;
 using Game.Accounts;
 using Game.World.Vehicles;
 using Game.World.Zones;
+using SampSharp.Streamer.World;
+using SampSharp.GameMode.SAMP;
+using Game.Factions;
 
 namespace Game
 {
@@ -81,6 +84,10 @@ namespace Game
 
             Zone.Load(@"zones.xml");
             Interior.Load(@"interiors.xml");
+            House.Load();
+            Business.Load();
+            Faction.Load();
+            Generic.Load();
 
             base.OnInitialized(e);
         }
@@ -91,6 +98,7 @@ namespace Game
             controllers.Add(new ClockController());
             controllers.Add(new ItemController());
             controllers.Add(new PropertyController());
+            controllers.Add(new VehicleController());
 
             base.LoadControllers(controllers);
         }
@@ -100,7 +108,7 @@ namespace Game
             base.OnPlayerConnected(player, e);
             player.ToggleClock(false);
             serverName.Show(player);
-            
+
             GlobalObject.Remove(player, 5422, new Vector3(2071.4766, -1831.4219, 14.5625), 0.25f);
             GlobalObject.Remove(player, 5856, new Vector3(1024.9844, -1029.3516, 33.1953), 0.25f);
             GlobalObject.Remove(player, 6400, new Vector3(488.2813, -1734.6953, 12.3906), 0.25f);
@@ -110,6 +118,7 @@ namespace Game
             GlobalObject.Remove(player, 3294, new Vector3(-1420.5469, 2591.1563, 57.7422), 0.25f);
             GlobalObject.Remove(player, 3294, new Vector3(-100.0000, 1111.4141, 21.6406), 0.25f);
             GlobalObject.Remove(player, 13028, new Vector3(720.0156, -462.5234, 16.8594), 0.25f);
+
         }
 
         protected override void OnPlayerSpawned(BasePlayer sender, SpawnEventArgs e)
@@ -127,27 +136,6 @@ namespace Game
             sender.SendClientMessage(player.MyAccount.LastPosition.IsEmpty.ToString());
 
             player.Money = 9999;
-
-            if (!player.MyAccount.LastPosition.IsEmpty)
-            {
-                player.PutInProperty(player.MyAccount.LastProperty);
-                player.Position = player.MyAccount.LastPosition;
-                player.Angle = player.MyAccount.LastAngle;
-
-                player.MyAccount.ClearLastData();
-            }
-            else if (player.House != null)
-            {
-                player.PutInProperty(player.House);
-            }
-            else if(player.RentedRoom != null)
-            {
-                player.PutInProperty(player.RentedRoom);
-            }
-            else
-            {
-                player.Position = new Vector3(1023.1342, -1031.1912, 31.9978);
-            }
             base.OnPlayerSpawned(sender, e);
         }
 
@@ -208,17 +196,28 @@ namespace Game
             sender.Health = 0.0f;
         }
 
-        [Command("dick7")]
-        private static void Crime(BasePlayer sender)
-        {
-            FadeScreen fs = new FadeScreen(sender as Player, 5000, FadeScreenMode.ModeComplete);
-            fs.Start();
-        }
-
         [Command("dick8")]
         private static void dick8(BasePlayer sender)
         {
             sender.Vehicle.Engine = !sender.Vehicle.Engine;
         }
+
+        [Command("dick9")]
+        private static void dick9(BasePlayer sender)
+        {
+            sender.SendClientMessage((sender as Player).Faction.ToString());
+            sender.SendClientMessage((sender as Player).Rank.ToString());
+        }
+
+        //[Command("dick10")]
+        //private static void dick10(BasePlayer sender)
+        //{
+        //    Vehicle v = sender.Vehicle as Vehicle;
+
+        //    if(v != null)
+        //    {
+        //        Faction.MakeMember((sender as Player).Faction, v);
+        //    }
+        //}
     }
 }

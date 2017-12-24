@@ -18,20 +18,24 @@ namespace Game.World.GasStations
 
         private void __area_Enter(object sender, PlayerEventArgs e)
         {
-            EnterGasStation?.Invoke(this, new PlayerEventArgs(e.Player));
+            Player player = e.Player as Player;
+
+            EnterGasStation?.Invoke(this, new PlayerEventArgs(player));
 
             if (__on)
             {
                 if (Gas > 0)
                 {
-                    __RegisterPlayer(e.Player as Player);
-                    e.Player.SendClientMessage("** Use LALT to start refill.");
+                    __RegisterPlayer(player);
+
+                    if (player.Vehicle != null)
+                        player.MessageBox.Show("We are happy if your vehicle is happy.\nUse LALT to start refill.");
                 }
                 else
-                    e.Player.SendClientMessage("** Sadly, we ran out of fuel. We will be back at next Payday.");
+                    player.MessageBox.Show("Sadly, we ran out of fuel. We will be back at next Payday.");
             }
             else
-                e.Player.SendClientMessage("** Sorry, we are offline today.");
+                player.MessageBox.Show("Sorry, we are offline today.");
         }
 
         private void Player_Died(object sender, DeathEventArgs e)
@@ -62,7 +66,7 @@ namespace Game.World.GasStations
                 {
                     if (vehicle.Engine)
                     {
-                        player.SendClientMessage("** We cannot refill your vehicle if the engine is on.");
+                        player.MessageBox.Show("We cannot refill your vehicle if the engine is on.");
                         return;
                     }
 

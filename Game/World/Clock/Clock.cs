@@ -5,6 +5,7 @@ using System.Timers;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.Definitions;
 using Game.World.Players;
+using System.Linq;
 
 namespace Game.World
 {
@@ -36,7 +37,7 @@ namespace Game.World
             time = DateTime.Now;
             txdClock.Text = time.ToString("dd/MM/yyyy ~n~HH:mm");
 
-            foreach (Player next in Player.GetAll<Player>())
+            foreach (Player next in Player.GetAll<Player>().ToArray())
             {
                 next.SetTime(time.Hour, time.Minute);
             }

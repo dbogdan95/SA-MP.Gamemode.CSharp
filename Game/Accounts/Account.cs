@@ -1,4 +1,5 @@
 ﻿using Game.Core;
+using Game.Factions;
 using Game.World.Players;
 using Game.World.Properties;
 using MySql.Data.MySqlClient;
@@ -15,10 +16,11 @@ namespace Game.Accounts
         public string Email { get; private set; }
         public string PasswordHash { get; private set; }
         public DateTime Birthday { get; private set; }
-        public Int16 Gender { get; private set; }
-        public Vector3 LastPosition { get; set; }
+        public GenderType Gender { get; private set; }
+        public Vector3 LastPosition { get; private set; }
         public float LastAngle { get; private set; }
-        public Property LastProperty { get; set; }
+        public Property LastProperty { get; private set; }
+        public DateTime RegisterDate { get; private set; }
 
         private Player __player;
 
@@ -53,7 +55,11 @@ namespace Game.Accounts
         {
             using (var conn = Database.Connect())
             {
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM players WHERE name=@name AND password=@pass", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT A.*, B.baseFaction as faction, B.rank as rank FROM players AS A " +
+                    "LEFT JOIN players_factions AS B " +
+                    "ON A.id = B.basePlayer " +
+                    "WHERE A.name = @name AND A.password = @pass", conn);
+
                 cmd.Parameters.AddWithValue("@name", __player.Name);
                 cmd.Parameters.AddWithValue("@pass", Util.Sha256_hash(InputPassword));
                 MySqlDataReader data = cmd.ExecuteReader();
@@ -66,7 +72,8 @@ namespace Game.Accounts
                         PasswordHash                = data.GetString("password");
                         Email                       = data.GetString("email");
                         Birthday                    = DateTime.Parse(data.GetString("birthday"));
-                        Gender                      = data.GetInt16("gender");
+                        Gender                      = (GenderType)data.GetInt16("gender");
+                        RegisterDate                = Convert.ToDateTime(data.GetString("registeredAt"));
 
                         LastPosition                = new Vector3(data.GetFloat("x"), data.GetFloat("y"), data.GetFloat("z"));
                         LastAngle                   = data.GetFloat("a");
@@ -76,6 +83,17 @@ namespace Game.Accounts
                         __player.House              = data["house"] is DBNull ? null :  Property.Find(data.GetInt32("house")) as House;
                         __player.Business           = data["business"] is DBNull ? null : Property.Find(data.GetInt32("business")) as Business;
 
+                        if (data["faction"] is DBNull)
+                        {
+                            __player.Faction = null;
+                            __player.Rank = null;
+                        }
+                        else
+                        {
+                            __player.Faction = Faction.Find(data.GetInt32("faction"));
+                            __player.Rank = data.GetInt32("rank");
+                        }
+                        
                         __player.SendClientMessage("Load("+ Util.Sha256_hash(InputPassword) + ")");
                     }
                     return true;
@@ -84,7 +102,7 @@ namespace Game.Accounts
             return false;
         }
 
-        private void Save()
+        public void Save()
         {
             using (var conn = Database.Connect())
             {
@@ -133,9 +151,10 @@ namespace Game.Accounts
                 cmd.Parameters.AddWithValue("@pass", PasswordHash);
                 cmd.Parameters.AddWithValue("@email", Email);
                 cmd.Parameters.AddWithValue("@birthday", Birthday.ToString("MM/dd/yyyy"));
-                cmd.Parameters.AddWithValue("@gen", Gender);
+                cmd.Parameters.AddWithValue("@gen", (short)Gender);
                 cmd.ExecuteNonQuery();
 
+                RegisterDate = DateTime.Now;
                 Id = (int)cmd.LastInsertedId;
             }
         }
@@ -145,16 +164,20 @@ namespace Game.Accounts
             __player.SendClientMessage("Spawn()");
             __player.IsLogged = true;
             __player.ToggleSpectating(false);
+            __player.VirtualWorld = 0;
         }
 
-        public static Player GetPlayerBySQLID(int id)
+        public static Player GetPlayerBySQLID(int? id)
         {
-            return Player.GetAll<Player>().Where(p => p.MyAccount.Id == id).FirstOrDefault();
+            if (id is null || id == 0)
+                return null;
+
+            return Player.GetAll<Player>().Where(p => p.MyAccount.Id == id).ToArray().FirstOrDefault();
         }
 
-        public static string GetSQLNameFromSQLID(int id)
+        public static string GetSQLNameFromSQLID(int? id)
         {
-            if (id == 0)
+            if (id == null || id == 0)
                 return string.Empty;
 
             using (var conn = Database.Connect())
@@ -179,6 +202,11 @@ namespace Game.Accounts
                 cmd.Parameters.AddWithValue("@id", id);
                 return ((long)cmd.ExecuteScalar() > 0);
             }
+        }
+
+        public override string ToString()
+        {
+            return "Account(Id: " + Id + ", User: " + __player.Name + "(" + __player.Id + ")" + ", " + RegisterDate.ToString() + ")";
         }
     }
 }

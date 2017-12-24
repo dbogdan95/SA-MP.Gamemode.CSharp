@@ -9,15 +9,25 @@ using SampSharp.GameMode.Controllers;
 using Game.World.Players;
 using System.Linq;
 using System.Collections.Generic;
+using Game.Factions;
+using Game.Core;
+using MySql.Data.MySqlClient;
 
 namespace Game.World.Vehicles
 {
     [PooledType]
     public partial class Vehicle : BaseVehicle
     {
-        private float __fuel;
+        public int? SQLID { get; set; } = null;
+        public Faction Faction { get; set; } = null;
+        public int? Rank { get; set; } = null;
 
-        public float Fuel { get => __fuel; set => __fuel = Math.Clamp(value, 0, Common.MAX_VEHICLE_FUEL); }
+        private float __fuel = 100;
+        public float Fuel
+        {
+            get => __fuel;
+            set => __fuel = Math.Clamp(value, 0, Common.MAX_VEHICLE_FUEL);
+        }
 
         public Vector3 PostionFromOffset(Vector3 offset)
         {
@@ -65,16 +75,7 @@ namespace Game.World.Vehicles
                 else
                     base.Engine = value;
 
-                if (base.Engine == false)
-                {
-                    if (!IsAnyVehicleWithEngineOn())
-                        EngineTimer.Stop();
-                }
-                else
-                {
-                    if (!EngineTimer.Enabled)
-                        EngineTimer.Start();
-                }
+                Vehicles.Engine.Instance.Switch(base.Engine);
             }
         }
 
@@ -96,7 +97,12 @@ namespace Game.World.Vehicles
 
         IEnumerable<Player> AllPasaggers()
         {
-            return Player.GetAll<Player>().Where(p => p.Vehicle == this);
+            return Player.GetAll<Player>().Where(p => p.Vehicle == this).ToArray();
+        }
+
+        public static bool AnyEngineOn()
+        {
+            return (GetAll<Vehicle>().Where(v => v.Engine).Count() > 0);
         }
     }
 }

@@ -15,21 +15,20 @@ namespace Game.World.Properties
         private PropertyType __type;
         private DynamicArea __area = null;
         private DynamicPickup __pickup = null;
-        private DynamicMapIcon __icon = null;
         private DynamicTextLabel __label = null;
         private Interior __interior = null;
+        private List<Player> __PlayersIn = new List<Player>();
         private Vector3 __pos;
         private float __angle;
         private bool __locked;
-        private List<Player> __PlayersIn = new List<Player>();
         private int __deposit;
         private int __price;
-        private int __owner;
-
+        private int? __owner;
+        
         public Property(int id, PropertyType type, Interior interior, Vector3 pos, float angle)
         {
-            __Spawn(type, interior, pos, angle);
             Id = id;
+            __Spawn(type, interior, pos, angle);
         }
 
         public Property(PropertyType type, Interior interior, Vector3 pos, float angle)
@@ -64,19 +63,16 @@ namespace Game.World.Properties
         {
             // Curatam memoria
             __pickup.Dispose();
-            __label.Dispose();
+            if (__type != PropertyType.TypeGeneric) __label.Dispose();
             //__area.Dispose();
-
-            if (__icon != null)
-                __icon.Dispose();
 
             foreach (Player player in __PlayersIn)
                 player.RemoveFromProperty();
 
-            foreach (Player player in Player.GetAll<Player>().Where(p => p.PropertyInteracting == this))
-               player.PropertyInteracting = null;
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.PropertyInteracting == this).ToArray())
+                player.PropertyInteracting = null;
 
-            foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this))
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this).ToArray() )
                 player.RentedRoom = null;
 
             using (var conn = Database.Connect())
@@ -107,11 +103,7 @@ namespace Game.World.Properties
                 // Actualizam pozitile
                 __pos = value;
                 __pickup.Position = __pos;
-                __label.Position = __pos;
-
-                // Doar business-urile au iconite
-                if (__type == PropertyType.TypeBusiness)
-                    __icon.Position = __pos;
+                if (__type != PropertyType.TypeGeneric) __label.Position = __pos;
             }
         }
 
@@ -127,33 +119,8 @@ namespace Game.World.Properties
 
         //
         // Summary:
-        //     Gets the icon of property.
-        public virtual DynamicMapIcon Icon => __icon;
-
-        //
-        // Summary:
         //     Gets the label of property.
         public virtual DynamicTextLabel Label => __label;
-
-        public virtual bool ShowIcon(int id)
-        {
-            if(id < 0 || id > 63)
-            {
-                return false;
-            }
-
-            if (__icon != null)
-                __icon.Type = id;
-            else
-                __icon = new DynamicMapIcon(__pos, id);
-
-            return true;
-        }
-        public virtual void HideIcon()
-        {
-            if (__icon != null)
-                __icon.Dispose();
-        }
 
         //
         //
@@ -211,7 +178,6 @@ namespace Game.World.Properties
             get => __locked;
             set
             {
-                System.Console.WriteLine("Locked called from base");
                 bool lk = value;
 
                 if(!lk) // Open
@@ -272,10 +238,12 @@ namespace Game.World.Properties
         public virtual int Deposit { get => __deposit; set => __deposit = value; }
         public virtual int Price { get => __price; set => __price = value; }
 
-        public virtual int Owner { get => __owner; set => __owner = value; }
+        public virtual int? Owner { get => __owner; set => __owner = value; }
 
         public virtual void UpdateSql()
         {
+            Console.WriteLine("UpdateSql from base");
+
             using (var conn = Database.Connect())
             {
                 MySqlCommand cmd = new MySqlCommand("UPDATE properties SET interior=@interior, locked=@locked, deposit=@deposit, price=@price WHERE id=@id", conn);
@@ -297,5 +265,59 @@ namespace Game.World.Properties
         public abstract void UpdateLabel();
 
         public abstract void SetOwnerUpdate(int id);
+
+        //public static void Load()
+        //{
+        //    int props = 0;
+        //    using (var conn = Database.Connect())
+        //    {
+        //        MySqlCommand cmd = new MySqlCommand("SELECT A.*, C.x, C.y, c.z, C.a, C.locked, C.deposit, C.interior, C.price, B.id AS owner " +
+        //            "FROM houses as A " +
+        //            "LEFT JOIN players as B ON A.id = B.house " +
+        //            "INNER JOIN properties AS C ON c.id = A.baseProperty", conn);
+
+        //        MySqlDataReader data = cmd.ExecuteReader();
+
+        //        while (data.Read())
+        //        {
+        //            House h = new House(data["interior"] is DBNull ? null : Interior.FromIndex(data.GetInt32("interior")), new Vector3(data.GetFloat("x"), data.GetFloat("y"), data.GetFloat("z")), data.GetFloat("a"), data.GetInt32("id"))
+        //            {
+        //                Locked = data.GetBoolean("locked"),
+        //                Deposit = data.GetInt32("deposit"),
+        //                Rent = data.GetInt32("rent"),
+        //                Level = data.GetInt32("level"),
+        //                Owner = data["owner"] is DBNull ? 0 : data.GetInt32("owner"),
+        //                Price = data.GetInt32("price")
+        //            };
+        //            h.UpdateLabel();
+        //            props++;
+        //        }
+        //        data.Close();
+
+        //        cmd = new MySqlCommand("SELECT A.*, C.x, C.y, c.z, C.a, C.locked, C.deposit, C.interior, C.price, B.id AS owner " +
+        //            "FROM business as A " +
+        //            "LEFT JOIN players as B ON A.id = B.business " +
+        //            "INNER JOIN properties AS C ON c.id = A.baseProperty", conn);
+
+        //        data = cmd.ExecuteReader();
+
+        //        while (data.Read())
+        //        {
+        //            Business b = new Business(data["interior"] is DBNull ? null : Interior.FromIndex(data.GetInt32("interior")), new Vector3(data.GetFloat("x"), data.GetFloat("y"), data.GetFloat("z")), data.GetFloat("a"), data.GetInt32("id"))
+        //            {
+        //                Locked = data.GetBoolean("locked"),
+        //                Deposit = data.GetInt32("deposit"),
+        //                BizzType = BusinessType.Find(data.GetInt32("type")),
+        //                Domainid = data.GetInt32("domainid"),
+        //                Owner = data["owner"] is DBNull ? 0 : data.GetInt32("owner"),
+        //                Price = data.GetInt32("price")
+        //            };
+        //            b.UpdateLabel();
+        //            props++;
+        //        }
+        //        data.Close();
+        //    }
+        //    Console.WriteLine("** Loaded {0} properties from database.", props);
+        //}
     }
 }

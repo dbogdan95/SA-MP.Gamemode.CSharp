@@ -9,27 +9,26 @@ using Game.World.Players;
 
 namespace Game.Display
 {
-    class MessageBox : IController, IEventListener
+    public class MessageBox
     {
         private PlayerTextDraw __box;
+        private Timer __timer = new Timer();
 
-        public void RegisterEvents(BaseMode gameMode)
+        public MessageBox(Player player)
         {
-            gameMode.PlayerConnected += GameMode_PlayerConnected;
-        }
-
-        private void GameMode_PlayerConnected(object sender, EventArgs e)
-        {
-            __box = new PlayerTextDraw(sender as Player)
+            __box = new PlayerTextDraw(player)
             {
                 Position = new Vector2(25.500000, 170.312500),
                 LetterSize = new Vector2(0.399500, 1.538750),
+                Height = 0.000000f,
+                Width = 181.000000f,
                 Alignment = SampSharp.GameMode.Definitions.TextDrawAlignment.Left,
                 ForeColor = -1,
                 UseBox = true,
                 Shadow = 0,
                 Outline = 0,
                 BackColor = 255,
+                BoxColor = 150,
                 Font = SampSharp.GameMode.Definitions.TextDrawFont.Normal,
                 Proportional = true
             };
@@ -50,14 +49,16 @@ namespace Game.Display
             __box.Text = txt;
             __box.Show();
 
-            Timer t = new Timer(forms);
-            t.Elapsed += (sender, e) =>
+            if(__timer.Enabled)
+                __timer.Stop();
+            
+            __timer.Interval = forms;
+            __timer.Elapsed += (sender, e) =>
             {
                 __box.Hide();
-                t.Stop();
-                t.Dispose();
+                __timer.Stop();
             };
-            t.Start();
+            __timer.Start();
         }
     }
 }

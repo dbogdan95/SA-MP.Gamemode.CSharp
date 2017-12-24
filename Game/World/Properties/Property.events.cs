@@ -1,4 +1,5 @@
-﻿using Game.World.Players;
+﻿using Game.Factions;
+using Game.World.Players;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.Events;
 
@@ -44,7 +45,7 @@ namespace Game.World.Properties
 
                 player.ClearAnimations();
 
-                if (Locked)
+                if (Locked || ((this is Generic) && (this as Generic).Faction != null && player.Faction != (this as Generic).Faction))
                 {
                     player.GameText("~r~Locked", 1, 1);
                     Util.PlaySoundInRangeOfPoint((Sounds)24600, player.Position, 15.0f);

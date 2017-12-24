@@ -1,4 +1,5 @@
 ﻿using Game.World.Players;
+using Game.World.Properties;
 using SampSharp.Streamer.World;
 using System;
 using System.Collections.Generic;
@@ -8,7 +9,7 @@ namespace Game.World.GasStations
 {
     partial class GasStation
     {
-        private bool __on { get; set; }
+        private bool __on;
         private DynamicArea __area;
         private float __gas;
 
@@ -33,6 +34,16 @@ namespace Game.World.GasStations
             {
                 __customers[player].Stop();
                 __customers.Remove(player);
+            }
+        }
+
+        protected void Pay(int money)
+        {
+            Business b = Business.FindByDomain(Id, BusinessTypes.TypeGas);
+            if (b != null)
+            {
+                b.Deposit += (int)(money - money * Common.TAX_BUSINESS_PER_PRODUCTS);
+                b.UpdateSql();
             }
         }
     }

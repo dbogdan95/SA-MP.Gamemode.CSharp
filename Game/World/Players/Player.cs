@@ -1,31 +1,38 @@
 ﻿using System.Timers;
-using Game.World.Items;
-using Game.World.Properties;
 using SampSharp.GameMode.World;
 using SampSharp.GameMode;
 using SampSharp.GameMode.Pools;
 using Game.Accounts;
 using Game.World.Vehicles;
+using Game.Display;
+using Game.Factions;
+using Game.World.Items;
+using Game.World.Properties;
 
 namespace Game.World.Players
 {
     [PooledType]
     public partial class Player : BasePlayer
     {
-        public bool IsLogged { get; set; }
-        public Account MyAccount { get; private set; }
-        public VehicleHud VehicleHud { get; private set; }
-        public Item HoldingItem { get; set; }
-        public bool Lift { get; set; }
-        public Timer ItemInteractTimer { get; set; }
-        public Property Property { get; set; }
-        public Property PropertyInteracting { get; set; }
-        public House RentedRoom { get; set; }
-        public House House { get; set; }
-        public Business Business { get; set; }
-        public bool PropertyTranslation { get; set; }
-        public bool PropertyDirection { get; set; }
-        
+        public bool IsLogged { get; set; }                  = false;
+        public Account MyAccount { get; private set; }      = null;
+        public Hud VehicleHud { get; private set; }         = null;
+        public Item HoldingItem { get; set; }               = null;
+        public bool Lift { get; set; }                      = false;
+        public Timer ItemInteractTimer { get; set; }        = null;
+        public Property Property { get; set; }              = null;
+        public Property PropertyInteracting { get; set; }   = null;
+        public House RentedRoom { get; set; }               = null;
+        public House House { get; set; }                    = null;
+        public Business Business { get; set; }              = null;
+        public bool PropertyTranslation { get; set; }       = false;
+        public bool PropertyDirection { get; set; }         = false;
+        public MessageBox MessageBox { get; private set; }  = null;
+        public FadeScreen FadeScreen { get; private set; }  = null;
+        public Faction Faction { get; set; }                = null;
+        public int? Rank { get; set; }                      = null;
+        public bool SpawnAt { get; set; }                   = false;
+
         public override void Spawn()
         {
             SetSpawnInfo(-1, 0, Vector3.Zero, 0.0f);

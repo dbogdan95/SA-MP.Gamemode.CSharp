@@ -7,7 +7,7 @@ using SampSharp.GameMode.Pools;
 
 namespace Game.World
 {
-    public class StaticWorldObject<T> : IdentifiedPool<T>, IWorldObject where T : StaticWorldObject<T>
+    public class StaticWorldObject<T> : IdentifiedPool<T>, IStaticWorldObject where T : StaticWorldObject<T>
     {
         public virtual Vector3 Position { get; set; }
 

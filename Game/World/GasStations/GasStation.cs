@@ -1,13 +1,7 @@
-﻿using Game.World.Properties;
-using SampSharp.GameMode;
-using SampSharp.GameMode.Display;
+﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Events;
-using SampSharp.GameMode.Pools;
-using SampSharp.GameMode.World;
 using SampSharp.Streamer.World;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace Game.World.GasStations
 {
@@ -63,15 +57,5 @@ namespace Game.World.GasStations
 
         public void On() => __on = true;
         public void Off() => __on = false;
-
-        protected void Pay(int money)
-        {
-            Business b = Business.FindByDomain(Id, BusinessTypes.TypeGas);
-            if (b != null)
-            {
-                b.Deposit += (int)(money - money * Common.TAX_BUSINESS_PER_PRODUCTS);
-                b.UpdateSql();
-            }
-        }
     }
 }

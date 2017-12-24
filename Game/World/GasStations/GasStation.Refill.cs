@@ -19,7 +19,7 @@ namespace Game.World.GasStations
             {
                 __gasStation = gasStation;
                 __player = player;
-                __timer = new Timer(100);
+                __timer = new Timer(200);
                 __total = 0;
                 __gasUsed = 0;
             }
@@ -46,8 +46,8 @@ namespace Game.World.GasStations
                     {
                         vehicle.Fuel = Common.MAX_VEHICLE_FUEL;
                         __stop();
-
-                        __player.SendClientMessage("** We hope you enjoyed our services.");
+                        
+                        __player.MessageBox.Show("We hope you enjoyed our services.");
                         return;
                     }
 
@@ -56,7 +56,7 @@ namespace Game.World.GasStations
                         __gasStation.Gas = 0;
                         __stop();
 
-                        __player.SendClientMessage("** We ran out of fuel, we will be back at next Payday.");
+                        __player.MessageBox.Show("We ran out of fuel, we will be back at next Payday.");
                         return;
                     }
 
@@ -64,7 +64,7 @@ namespace Game.World.GasStations
                     {
                         __stop();
 
-                        __player.SendClientMessage("** That's it. You don't have enough money to continue the refill. " +
+                        __player.MessageBox.Show("That's it. You don't have enough money to continue the refill. " +
                             "No more freebies.");
                         return;
                     }
@@ -85,7 +85,7 @@ namespace Game.World.GasStations
 
                     msg.Response += (sender2, e2) =>
                     {
-                        __player.SendClientMessage("** As you wish. Thanks you for using our services. Have a nice day!");
+                        __player.MessageBox.Show("As you wish. Thanks you for using our services. Have a nice day!");
                         __player.Money -= __total;
                         __stop();
                     };
