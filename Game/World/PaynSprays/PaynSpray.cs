@@ -1,6 +1,5 @@
 ﻿using System;
 using SampSharp.GameMode;
-using SampSharp.GameMode.Pools;
 using SampSharp.Streamer.World;
 using SampSharp.GameMode.Events;
 using SampSharp.GameMode.SAMP;
@@ -184,7 +183,10 @@ namespace Game.World.PaynSprays
                 };
             }
             else
-                e.Player.GameText("~w~What are you doing here?~n~~w~Shuu!", 3000, 3);
+            {
+                if(player.State == PlayerState.OnFoot)
+                    e.Player.GameText("~w~What are you doing here?~n~~w~Shuu!", 3000, 3);
+            }
         }
 
         private void __player_Disconnected(object sender, DisconnectEventArgs e)

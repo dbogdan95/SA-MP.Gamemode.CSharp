@@ -23,7 +23,10 @@ namespace Game.World.Items
             }
 
             if(player.ItemInteractTimer != null)
+            {
                 player.ItemInteractTimer.Dispose();
+                player.ItemInteractTimer = null;
+            }
         }
 
         private void Item_OnPlayerKeyStateChange(object sender, KeyStateChangedEventArgs e)

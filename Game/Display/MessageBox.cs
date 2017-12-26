@@ -1,18 +1,15 @@
-﻿using SampSharp.GameMode.Controllers;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using SampSharp.GameMode;
+﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Display;
-using System.Timers;
 using Game.World.Players;
+using SampSharp.GameMode.SAMP;
+using System;
 
 namespace Game.Display
 {
     public class MessageBox
     {
         private PlayerTextDraw __box;
-        private Timer __timer = new Timer();
+        private Timer __timer = new Timer(100, true);
 
         public MessageBox(Player player)
         {
@@ -49,16 +46,16 @@ namespace Game.Display
             __box.Text = txt;
             __box.Show();
 
-            if(__timer.Enabled)
-                __timer.Stop();
+            if(__timer.IsRunning)
+                __timer.IsRunning = false;
             
-            __timer.Interval = forms;
-            __timer.Elapsed += (sender, e) =>
+            __timer.Interval = TimeSpan.FromMilliseconds(forms);
+            __timer.Tick += (sender, e) =>
             {
                 __box.Hide();
-                __timer.Stop();
+                __timer.IsRunning = false;
             };
-            __timer.Start();
+            __timer.IsRunning = true;
         }
     }
 }

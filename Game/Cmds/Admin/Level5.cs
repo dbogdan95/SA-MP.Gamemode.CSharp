@@ -24,11 +24,5 @@ namespace Game.Cmds
             }
             #endregion
         }
-
-        [Command("dev", PermissionChecker = typeof(Level5PermissionChecker))]
-        private static void Dev(BasePlayer sender)
-        {
-            PaynSpray.ToggleDeveloper();
-        }
     }
 }

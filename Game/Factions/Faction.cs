@@ -29,21 +29,21 @@ namespace Game.Factions
         }
 
         public ReadOnlyDictionary<int, Rank> GetRanks { get => new ReadOnlyDictionary<int, Rank>(__ranks.ToDictionary(k => k.Key, v => v.Value)); }
-        public Color Color { get => __color; }
 
         public IEnumerable<Player> PlayersInFaction(Faction faction)
         {
-            return Player.GetAll<Player>().Where(pl => pl.Faction == faction).ToArray();
+            return Player.GetAll<Player>().ToArray().Where(pl => pl.Faction == faction);
         }
 
         public IEnumerable<Vehicle> VehiclesInFaction(Faction faction)
         {
-            return Vehicle.GetAll<Vehicle>().Where(veh => veh.Faction == faction).ToArray();
+            return Vehicle.GetAll<Vehicle>().ToArray().Where(veh => veh.Faction == faction);
         }
 
         public Generic Headquarter => Property.GetAll<Generic>().Where(generic => generic.Faction == this).FirstOrDefault();
 
         public string Name { get => __name; set => __name = value; }
+        public Color Color { get => __color; set => __color = value; }
 
         public bool Invite(Player player/*, bool updateDB = false*/)
         {
@@ -53,7 +53,7 @@ namespace Game.Factions
             player.Faction = this;
             player.Rank = 1;
             player.Skin = __ranks[1].Skin;
-            player.Color = Color;
+            player.Color = __color;
 
             /*if (updateDB)*/
             __insertOrUpdateMember(player);

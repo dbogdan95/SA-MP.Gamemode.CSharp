@@ -21,7 +21,7 @@ namespace Game.World.Properties
 
             if (type != PropertyType.TypeGeneric)
             {
-                __label = new DynamicTextLabel(ToString(), Color.White, pos, 30.0f);
+                __label = new DynamicTextLabel(ToString(), Color.White, new Vector3(pos.X, pos.Y, pos.Z + 0.2), 30.0f);
                 __label.TestLOS = true;
             }
             

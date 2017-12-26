@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using SampSharp.GameMode;
-using SampSharp.GameMode.Definitions;
 using SampSharp.Streamer.World;
-using SampSharp.GameMode.Events;
 using SampSharp.GameMode.Pools;
 using Game.World.Players;
 

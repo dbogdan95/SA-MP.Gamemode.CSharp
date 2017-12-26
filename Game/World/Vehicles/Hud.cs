@@ -130,6 +130,7 @@ namespace Game.World.Vehicles
             __fuelBar.Hide();
             __speedo.Hide();
             __cursor.Hide();
+            lightsTexdraw.Hide(__player);
         }
 
         public void LightHud(bool b)

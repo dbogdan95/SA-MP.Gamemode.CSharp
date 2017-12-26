@@ -1,7 +1,6 @@
 ﻿using SampSharp.GameMode;
 using SampSharp.GameMode.Display;
 using System;
-using System.Timers;
 using SampSharp.GameMode.SAMP;
 using SampSharp.GameMode.Definitions;
 using Game.World.Players;
@@ -11,7 +10,7 @@ namespace Game.World
 {
     class Clock
     {
-        private static System.Timers.Timer clockTimer;
+        private static Timer clockTimer;
         private static DateTime time;
         private static TextDraw txdClock = new TextDraw(new Vector2(627.500000, 406.799987), "14:46~n~30/11/2017 - JOI");
 
@@ -26,12 +25,11 @@ namespace Game.World
             txdClock.Font = TextDrawFont.Pricedown;
             txdClock.Proportional = true;
 
-            clockTimer = new System.Timers.Timer(1000);
-            clockTimer.Elapsed += new ElapsedEventHandler(Clock_OnTick);
-            clockTimer.Start();
+            clockTimer = new Timer(1000, true);
+            clockTimer.Tick += ClockTimer_Tick;
         }
 
-        private static void Clock_OnTick(object sender, EventArgs e)
+        private static void ClockTimer_Tick(object sender, EventArgs e)
         {
             // TODO: actualizeaza doar daca minutele sunt diferite
             time = DateTime.Now;

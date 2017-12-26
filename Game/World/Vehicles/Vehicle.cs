@@ -97,7 +97,7 @@ namespace Game.World.Vehicles
 
         IEnumerable<Player> AllPasaggers()
         {
-            return Player.GetAll<Player>().Where(p => p.Vehicle == this).ToArray();
+            return Player.GetAll<Player>().ToArray().Where(p => p.Vehicle == this);
         }
 
         public static bool AnyEngineOn()

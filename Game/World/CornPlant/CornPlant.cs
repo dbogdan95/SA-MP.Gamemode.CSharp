@@ -1,12 +1,6 @@
 ﻿using SampSharp.GameMode;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using SampSharp.Streamer.World;
-using SampSharp.GameMode.World;
-using SampSharp.GameMode.Events;
 using SampSharp.GameMode.Pools;
 
 namespace Game.World

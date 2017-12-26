@@ -69,10 +69,10 @@ namespace Game.World.Properties
             foreach (Player player in __PlayersIn)
                 player.RemoveFromProperty();
 
-            foreach (Player player in Player.GetAll<Player>().Where(p => p.PropertyInteracting == this).ToArray())
+            foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.PropertyInteracting == this))
                 player.PropertyInteracting = null;
 
-            foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this).ToArray() )
+            foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.RentedRoom == this) )
                 player.RentedRoom = null;
 
             using (var conn = Database.Connect())
@@ -103,7 +103,7 @@ namespace Game.World.Properties
                 // Actualizam pozitile
                 __pos = value;
                 __pickup.Position = __pos;
-                if (__type != PropertyType.TypeGeneric) __label.Position = __pos;
+                if (__type != PropertyType.TypeGeneric) __label.Position = new Vector3(__pos.X, __pos.Y, __pos.Z + 0.2);
             }
         }
 

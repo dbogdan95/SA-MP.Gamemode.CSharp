@@ -3,13 +3,9 @@ using Game.Factions;
 using Game.World.Players;
 using SampSharp.GameMode.SAMP.Commands;
 using SampSharp.GameMode.SAMP.Commands.Parameters;
-using SampSharp.GameMode.SAMP.Commands.ParameterTypes;
 using SampSharp.GameMode.SAMP.Commands.PermissionCheckers;
 using SampSharp.GameMode.World;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Game.Cmds.Admin
 {

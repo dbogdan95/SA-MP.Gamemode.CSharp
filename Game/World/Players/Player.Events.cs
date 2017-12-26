@@ -46,7 +46,7 @@ namespace Game.World.Players
 
                 if (Faction != null)
                 {
-                    if (!PutInProperty(Faction.Headquarter))
+                    if (PutInProperty(Faction.Headquarter))
                         return;
 
                 }

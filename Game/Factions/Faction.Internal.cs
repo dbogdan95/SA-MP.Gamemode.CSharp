@@ -15,7 +15,7 @@ namespace Game.Factions
         private void __Faction(int id, FactionCategory type, Color color, string name)
         {
             Id = id;
-            __name = name;
+            Name = name;
             __color = color;
             __type = type;
         }

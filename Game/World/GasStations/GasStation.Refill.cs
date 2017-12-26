@@ -1,7 +1,7 @@
 ﻿using Game.World.Players;
 using Game.World.Vehicles;
 using SampSharp.GameMode.Display;
-using System.Timers;
+using SampSharp.GameMode.SAMP;
 
 namespace Game.World.GasStations
 {
@@ -19,7 +19,7 @@ namespace Game.World.GasStations
             {
                 __gasStation = gasStation;
                 __player = player;
-                __timer = new Timer(200);
+                __timer = new Timer(200, true);
                 __total = 0;
                 __gasUsed = 0;
             }
@@ -38,7 +38,7 @@ namespace Game.World.GasStations
             {
                 string price = Util.FormatNumber((int)GasStationPrice.PricePerLiter);
 
-                __timer.Elapsed += (sender, e) =>
+                __timer.Tick += (sender, e) =>
                 {
                     Vehicle vehicle = (__player.Vehicle as Vehicle);
 
@@ -91,12 +91,12 @@ namespace Game.World.GasStations
                     };
                     msg.Show(__player);
                 };
-                __timer.Start();
+                __timer.IsRunning = true;
             }
 
             private void __stop()
             {
-                __timer.Stop();
+                __timer.IsRunning = false;
                 __timer.Dispose();
                 __player.Money -= __total;
                 __gasStation.Pay(__total);

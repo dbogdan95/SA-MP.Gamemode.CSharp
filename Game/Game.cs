@@ -82,6 +82,12 @@ namespace Game
             new GasStation(15, new Vector3(650.8358, -576.4760, 15.3088), new Vector3(660.3215, -553.9163, 20.5575));
             new GasStation(16, new Vector3(1386.9375, 454.7686, 18.9276), new Vector3(1378.8147, 467.7030, 22.1437));
 
+            new DynamicObject(-1010, new Vector3(1571.6016, -1675.7500, 35.6677), Vector3.Zero);
+            new DynamicObject(-1011, new Vector3(1571.3461, -1670.9417, 17.6223), Vector3.Zero);
+
+            new DynamicObject(-1012, new Vector3(1555.8922, -1674.0765, 15.1955), new Vector3(0.0000, 0.0000, -90.0000));
+            new DynamicObject(-1012, new Vector3(1555.9153, -1677.1036, 15.1955), new Vector3(0.0000, 0.0000, 90.0000));
+
             Zone.Load(@"zones.xml");
             Interior.Load(@"interiors.xml");
             House.Load();
@@ -119,6 +125,10 @@ namespace Game
             GlobalObject.Remove(player, 3294, new Vector3(-100.0000, 1111.4141, 21.6406), 0.25f);
             GlobalObject.Remove(player, 13028, new Vector3(720.0156, -462.5234, 16.8594), 0.25f);
 
+            GlobalObject.Remove(player, 4064, new Vector3(1571.6016, -1675.7500, 35.6797), 0.25f);
+            GlobalObject.Remove(player, 1536, new Vector3(1555.9297, -1677.1250, 15.1797), 0.25f);
+            GlobalObject.Remove(player, 1536, new Vector3(1555.8906, -1674.1094, 15.1797), 0.25f);
+            GlobalObject.Remove(player, 3976, new Vector3(1571.6016, -1675.7500, 35.6797), 0.25f);
         }
 
         protected override void OnPlayerSpawned(BasePlayer sender, SpawnEventArgs e)

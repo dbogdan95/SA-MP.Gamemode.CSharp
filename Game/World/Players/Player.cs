@@ -1,5 +1,4 @@
-﻿using System.Timers;
-using SampSharp.GameMode.World;
+﻿using SampSharp.GameMode.World;
 using SampSharp.GameMode;
 using SampSharp.GameMode.Pools;
 using Game.Accounts;
@@ -8,6 +7,7 @@ using Game.Display;
 using Game.Factions;
 using Game.World.Items;
 using Game.World.Properties;
+using SampSharp.GameMode.SAMP;
 
 namespace Game.World.Players
 {

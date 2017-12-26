@@ -9,8 +9,18 @@ namespace Game.World.Properties
     {
         private void __area_Enter(object sender, PlayerEventArgs e)
         {
-            (e.Player as Player).PropertyInteracting = this;
-            e.Player.KeyStateChanged += Player_KeyStateChanged_Exterior;
+            Player p = (e.Player as Player);
+
+            p.PropertyInteracting = this;
+            p.KeyStateChanged += Player_KeyStateChanged_Exterior;
+            
+            if (this is Generic)
+            {
+                Generic g = (this as Generic);
+
+                if (g.Faction != null)
+                    p.GameText(g.Faction.Name, 3000, 1);
+            }
         }
         private void __area_Leave(object sender, PlayerEventArgs e)
         {
@@ -19,7 +29,7 @@ namespace Game.World.Properties
             if (player.Property != player.PropertyInteracting)
                 player.PropertyInteracting = null;
 
-            e.Player.KeyStateChanged -= Player_KeyStateChanged_Exterior;
+            player.KeyStateChanged -= Player_KeyStateChanged_Exterior;
         }
         private void __interior_TouchExit(object sender, PlayerEventArgs e)
         {

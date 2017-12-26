@@ -12,7 +12,11 @@ namespace Game.Cmds
         private static void CMD_RentRoom(BasePlayer sender)
         {
             Player player = (sender as Player);
-            House house = player.PropertyInteracting as World.Properties.House;
+
+            if (!(player.PropertyInteracting is House))
+                return;
+
+            House house = player.PropertyInteracting as House;
 
             if (house.Interior == null)
             {
@@ -53,6 +57,9 @@ namespace Game.Cmds
         {
             Player player = (sender as Player);
             Property property = player.PropertyInteracting;
+
+            if (property is Generic)
+                return;
 
             if (property.Price == 0)
                 return;

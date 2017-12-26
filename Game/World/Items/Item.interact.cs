@@ -38,7 +38,7 @@ namespace Game.World.Items
             Streamer.Update(player);
 
             player.Lift = false;
-            player.ItemInteractTimer.Stop();
+            player.ItemInteractTimer.Dispose();
             player.ItemInteractTimer = null;
         }
 
@@ -94,7 +94,7 @@ namespace Game.World.Items
         {
             Player player = __interactor;
 
-            player.ItemInteractTimer.Stop();
+            player.ItemInteractTimer.Dispose();
             player.ItemInteractTimer = null;
             player.Lift = false;
             __interactor = null;

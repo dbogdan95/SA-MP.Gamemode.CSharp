@@ -21,8 +21,6 @@ namespace Game.Cmds.ParameterTypes
 
             var word = commandText.TrimStart().Split(' ').First();
 
-            Console.WriteLine("parse " + word);
-
             // find a faction with a matching id.
             int id;
             if (int.TryParse(word, NumberStyles.Integer, CultureInfo.InvariantCulture, out id))

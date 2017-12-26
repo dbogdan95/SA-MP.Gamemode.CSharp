@@ -91,7 +91,7 @@ namespace Game.World.Properties
             {
                 if (__rent > 0 && value == 0)
                 {
-                    foreach (Player p in Player.GetAll<Player>().Where(p => p.RentedRoom == this).ToArray())
+                    foreach (Player p in Player.GetAll<Player>().ToArray().Where(p => p.RentedRoom == this))
                         p.RentedRoom = null;
 
                     using (var conn = Database.Connect())
@@ -181,7 +181,7 @@ namespace Game.World.Properties
 
         public void PutToSell()
         {
-            foreach (Player player in Player.GetAll<Player>().Where(p => p.RentedRoom == this).ToArray())
+            foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.RentedRoom == this))
             {
                 player.RentedRoom = null;
                 player.SendClientMessage("** You were unexpectedly evacuated from your rent.");

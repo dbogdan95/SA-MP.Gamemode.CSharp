@@ -1,4 +1,5 @@
-﻿using Game.World.Players;
+﻿using Game.World.PaynSprays;
+using Game.World.Players;
 using Game.World.Properties;
 using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.Display;
@@ -27,6 +28,12 @@ namespace Game.Cmds.Admin
                 return true;
             }
             #endregion
+        }
+
+        [Command("dev", PermissionChecker = typeof(Level3PermissionChecker))]
+        private static void Dev(BasePlayer sender)
+        {
+            PaynSpray.ToggleDeveloper();
         }
 
         [CommandGroup("prop", PermissionChecker = typeof(Level3PermissionChecker))]

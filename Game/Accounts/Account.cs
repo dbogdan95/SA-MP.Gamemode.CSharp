@@ -172,7 +172,7 @@ namespace Game.Accounts
             if (id is null || id == 0)
                 return null;
 
-            return Player.GetAll<Player>().Where(p => p.MyAccount.Id == id).ToArray().FirstOrDefault();
+            return Player.GetAll<Player>().ToArray().Where(p => p.MyAccount.Id == id).FirstOrDefault();
         }
 
         public static string GetSQLNameFromSQLID(int? id)

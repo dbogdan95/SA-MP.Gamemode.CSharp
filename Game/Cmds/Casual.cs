@@ -13,7 +13,6 @@ namespace Game.Cmds
         private static void CMD_SpawnSwitch(BasePlayer sender)
         {
             Player player = sender as Player;
-            player.SpawnAt = !player.SpawnAt;
 
             if (player.House == null)
             {
@@ -21,7 +20,9 @@ namespace Game.Cmds
                 return;
             }
 
-            if(player.SpawnAt)
+            player.SpawnAt = !player.SpawnAt;
+
+            if (player.SpawnAt)
             {
                 player.SendClientMessage("* Now, you will be spawned at your house or rent.");
             }

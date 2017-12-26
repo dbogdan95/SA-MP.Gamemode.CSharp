@@ -1,16 +1,13 @@
-﻿using Game.World.Players;
-using SampSharp.GameMode;
+﻿using SampSharp.GameMode.SAMP;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Timers;
 
 namespace Game.World.Vehicles
 {
     public sealed class Engine
     {
-        private readonly Timer __timer = new Timer(100);
+        private readonly Timer __timer = new Timer(100, true);
         private static readonly Lazy<Engine> __instance = new Lazy<Engine>(()=>new Engine());
 
         public static Engine Instance
@@ -23,28 +20,26 @@ namespace Game.World.Vehicles
 
         private Engine()
         {
-            __timer.Elapsed += EngineTick;
-
-            Console.WriteLine("Engine");
+            __timer.Tick += __timer_Tick;
         }
 
         public void Switch(bool enable)
         {
             if (enable)
             {
-                if (!__timer.Enabled)
-                    __timer.Start();
+                if (!__timer.IsRunning)
+                    __timer.IsRunning = true;
             }
             else
             {
                 if (!Vehicle.AnyEngineOn())
-                    __timer.Stop();
+                    __timer.IsRunning = false;
             }
         }
 
-        private void EngineTick(object sender, ElapsedEventArgs e)
+        private void __timer_Tick(object sender, EventArgs e)
         {
-            IEnumerable<Vehicle> vehicles = Vehicle.GetAll<Vehicle>().Where(v => v.Engine);
+            IEnumerable<Vehicle> vehicles = Vehicle.GetAll<Vehicle>().ToArray().Where(v => v.Engine);
             
             foreach (Vehicle vehicle in vehicles)
             {
