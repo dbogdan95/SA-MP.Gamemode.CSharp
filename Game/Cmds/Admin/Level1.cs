@@ -1,6 +1,8 @@
 ﻿using Game.Cmds.ParameterTypes;
 using Game.Factions;
 using Game.World.Players;
+using Game.World.Vehicles;
+using SampSharp.GameMode.Definitions;
 using SampSharp.GameMode.SAMP.Commands;
 using SampSharp.GameMode.SAMP.Commands.Parameters;
 using SampSharp.GameMode.SAMP.Commands.PermissionCheckers;
@@ -27,7 +29,7 @@ namespace Game.Cmds.Admin
             #endregion
         }
 
-        [Command("inviteto", PermissionChecker = typeof(Level1PermissionChecker), UsageMessage = "Usage: /invoteto [playerid/PartOfName] [factionid/PartOfName]")]
+        [Command("finvite", PermissionChecker = typeof(Level1PermissionChecker), UsageMessage = "Usage: /finvite [playerid/PartOfName] [factionid/PartOfName]")]
         private static void CMD_InviteTo(Player sender, Player target, [Parameter(typeof(FactionType))]Faction faction)
         {
             try
@@ -42,7 +44,7 @@ namespace Game.Cmds.Admin
             }
         }
 
-        [Command("dismissfrom", PermissionChecker = typeof(Level1PermissionChecker), UsageMessage = "Usage: /dismissfrom [playerid/PartOfName]")]
+        [Command("fdismiss", PermissionChecker = typeof(Level1PermissionChecker), UsageMessage = "Usage: /fdismiss [playerid/PartOfName]")]
         private static void CMD_DismissFrom(Player sender, Player target)
         {
             try
@@ -66,7 +68,7 @@ namespace Game.Cmds.Admin
                 sender.SendClientMessage("** " + target.ToString() + " has been changed to " + target.Faction.GetRanks[rankid].ToString());
                 target.SendClientMessage("* Admin " + sender.Name + " just changed your rank to " + target.Faction.GetRanks[rankid].Name);
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 sender.SendClientMessage("*** " + e.Message);
             }
@@ -80,6 +82,18 @@ namespace Game.Cmds.Admin
 
             target.MyAccount.Save();
             sender.SendClientMessage("** " + target.MyAccount.ToString() + " has been saved");
+        }
+
+        [Command("vehspawn", PermissionChecker = typeof(Level1PermissionChecker), UsageMessage = "Usage: /vehspawn [vehicleid/PartOfName]")]
+        private static void CMD_VehSpawn(Player sender, VehicleModelType model)
+        {
+            if (!sender.IsLogged)
+                return;
+
+            Vehicle v = BaseVehicle.Create(model, sender.Position, 0.0f, -1, -1) as Vehicle;
+            v.Fuel = Common.MAX_VEHICLE_FUEL;
+            v.Engine = true;
+            v.Lights = true;
         }
     }
 }

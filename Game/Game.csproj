@@ -15,17 +15,17 @@
 
   <ItemGroup>
     <PackageReference Include="MySql.Data" Version="8.0.9-dmr" />
-    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="11.0.1-beta1" />
     <PackageReference Include="SampSharp.Core" Version="0.8.0-alpha3" />
     <PackageReference Include="SampSharp.GameMode" Version="0.8.0-alpha2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\SampSharp.Streamer\SampSharp.Streamer.csproj" />
+    <Folder Include="Events\" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Events\" />
+    <ProjectReference Include="..\..\SampSharp-streamer-master\src\SampSharp.Streamer\SampSharp.Streamer.csproj" />
   </ItemGroup>
 
 </Project>

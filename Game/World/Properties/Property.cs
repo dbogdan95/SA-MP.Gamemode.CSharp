@@ -59,12 +59,13 @@ namespace Game.World.Properties
         //
         // Summary:
         //     Dispose a property.
-        public virtual void Remove()
+
+        protected override void Dispose(bool disposing)
         {
             // Curatam memoria
             __pickup.Dispose();
+            __area.Dispose();
             if (__type != PropertyType.TypeGeneric) __label.Dispose();
-            //__area.Dispose();
 
             foreach (Player player in __PlayersIn)
                 player.RemoveFromProperty();
@@ -72,16 +73,16 @@ namespace Game.World.Properties
             foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.PropertyInteracting == this))
                 player.PropertyInteracting = null;
 
-            foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.RentedRoom == this) )
+            foreach (Player player in Player.GetAll<Player>().ToArray().Where(p => p.RentedRoom == this))
                 player.RentedRoom = null;
 
             using (var conn = Database.Connect())
             {
-                new MySqlCommand("DELETE FROM properties WHERE id="+Id, conn)
+                new MySqlCommand("DELETE FROM properties WHERE id=" + Id, conn)
                     .ExecuteNonQuery();
             }
 
-            base.Dispose(true);
+            base.Dispose(disposing);
         }
 
         //

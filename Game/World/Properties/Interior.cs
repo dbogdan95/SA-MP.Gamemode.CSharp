@@ -53,11 +53,14 @@ namespace Game.World.Properties
         // Summary:
         //     Gets the game interior.
         public int GameInterior => __gameInterior;
+
+        public string Name { get => __name; set => __name = value; }
+
         // Summary:
         //     Gets the name of interior.
         public override string ToString()
         {
-            return __name + "(" + GetAll<Interior>().IndexOf(this) + ")";
+            return "Interior(Id:" + GetAll<Interior>().IndexOf(this) + " Name: " + __name + ")";
         }
         // Summary:
         //     Check if given id is valid for the interiors pool.

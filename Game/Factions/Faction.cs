@@ -44,6 +44,7 @@ namespace Game.Factions
 
         public string Name { get => __name; set => __name = value; }
         public Color Color { get => __color; set => __color = value; }
+        public FactionCategory Category { get => __type; }
 
         public bool Invite(Player player/*, bool updateDB = false*/)
         {
@@ -154,7 +155,23 @@ namespace Game.Factions
 
         public bool ValidRankid(int? rankid)
         {
-            return (rankid != null && rankid > 0 &&__ranks.ContainsKey(rankid.Value));
+            return (rankid != null && rankid > 0 && __ranks.ContainsKey(rankid.Value));
+        }
+
+        public void SendMessage(string str)
+        {
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.Faction == this))
+            {
+                player.SendClientMessage(Color.Cyan, str);
+            }
+        }
+
+        public void SendMessage(Color color, string str)
+        {
+            foreach (Player player in Player.GetAll<Player>().Where(p => p.Faction == this))
+            {
+                player.SendClientMessage(color, str);
+            }
         }
 
         public static void Load()

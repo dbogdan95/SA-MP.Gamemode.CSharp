@@ -86,7 +86,7 @@ namespace Game.Cmds.Admin
                 {
                     if (args.DialogButton == DialogButton.Left)
                     {
-                        property.Remove();
+                        property.Dispose();
                     }
                 };
             }
